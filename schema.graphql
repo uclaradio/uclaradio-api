@@ -1,0 +1,51 @@
+# DJs
+type DJ {
+  id: ID!
+  name: String!
+  picture: String
+  bio: String
+  shows: [Show]
+}
+
+# Shows
+type SocialLinks {
+  facebook: String
+  twitter: String
+  tumbler: String
+  soundcloud: String
+  mixcloud: String
+}
+
+type Show {
+  id: ID!
+  title: String!
+  startTime: Date!
+  endTime: Date!
+  djs: [DJ]!
+  description: String
+  genre: String
+  socialLinks: SocialLinks
+}
+
+# Social Media posts
+type Post {
+}
+
+# Messages
+type Message {
+}
+
+# Events
+type Event {
+}
+
+type Query {
+  djs: [DJ]!
+  dj(id: ID!): DJ!
+
+  show(id: ID!): Show!
+  shows: [Show]!
+  nowPlaying: Show!
+
+  events: [Event]!
+}
