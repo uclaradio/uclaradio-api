@@ -1,0 +1,15 @@
+{
+  "name": "uclaradio-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/uclaradio/uclaradio-api",
+  "author": "UCLA Radio Web <radio.web@uclaradio.com>",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0"
+  }
+}
