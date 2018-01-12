@@ -1,3 +1,5 @@
+# uclaradio.com
+
 # DJs
 type DJ {
   id: ID!
@@ -37,6 +39,19 @@ type Message {
 
 # Events
 type Event {
+}
+
+# Panel
+interface User {
+  id: ID!
+  email: String!
+  password: String!
+}
+
+type Member implements User {
+  id: ID!
+  email: String!
+  password: String!
 }
 
 type Query {
