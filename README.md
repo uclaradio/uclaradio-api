@@ -92,8 +92,17 @@ Then start Postgres with the command:
 brew services start postgresql
 ```
 
-Awesome! For reference, you can stop postgres at any time with
-`berw services stop postgresql`. You don't want to do that right now, though!
+If you have any issues starting up Postgres, refer to this handy [StackOverflow post](https://stackoverflow.com/questions/13410686/postgres-could-not-connect-to-server).
+
+Verify Postgres is working by accessing `psql`, an admin utility that is installed with Postgres:
+
+```shell
+psql postgres
+```
+
+For reference, you can stop postgres at any time with
+`brew services stop postgresql`. You don't want to do that right now, though!
+
 Instead, you'll want to create UCLA Radio's database. We call ours `uclaradio`.
 
 ```shell
@@ -104,7 +113,7 @@ You'll also want to create a dummy database used for testing. It's called
 `uclaradio-test`.
 
 ```shell
-createdb uclaradio
+createdb uclaradio-test
 ```
 
 Note that by default, the Postgres user is your computer's username and there is
@@ -134,7 +143,7 @@ make a pull request!
 
 #### Example .env File
 
-If you're making your own, the values you'll want are:
+Please make an .env file with the following values:
 
 ```
 DATABASE_HOST=
