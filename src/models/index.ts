@@ -26,4 +26,5 @@ sequelize
   });
 
 export { sequelize };
-export { default as Source } from './Source';
+export { default as Show } from './Show';
+export { default as User } from './User';
