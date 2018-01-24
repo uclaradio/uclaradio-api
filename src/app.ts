@@ -8,6 +8,7 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 import { notFoundHandler, errorHandler } from './errorHandling';
+import router from './routes';
 
 /** Create Express server */
 const app: Express = express();
@@ -20,6 +21,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 /** Routing */
+app.use('/', router);
 
 /** Error Handling */
 app.use(notFoundHandler);
