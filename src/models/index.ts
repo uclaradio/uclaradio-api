@@ -1,8 +1,10 @@
 import * as Sequelize from 'sequelize';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 // Configure connection to database.
-const databaseName =
-  process.env.NODE_ENV === 'test' ? 'sources-test' : 'sources';
+const databaseName = 'uclaradio';
 
 const sequelize = new Sequelize(
   databaseName,
@@ -27,4 +29,4 @@ sequelize
 
 export { sequelize };
 export { default as Show } from './Show';
-export { default as User } from './User';
+// export { default as User } from './User';
