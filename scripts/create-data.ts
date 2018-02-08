@@ -8,7 +8,9 @@ function createShows(n: number) {
     promises.push(
       Show.create({
         name: faker.commerce.productName(),
-        genre: faker.commerce.productAdjective()
+        description: faker.hacker.phrase(),
+        genre: faker.commerce.productAdjective(),
+        image: faker.image.avatar(),
       })
     );
   }
@@ -17,15 +19,7 @@ function createShows(n: number) {
 
 async function main() {
     await sequelize.sync({ force: true});
-
-    // const show = await Show.create({
-    //     name: 'The Blah Show 2',
-    //     genre: 'vaporwave'
-    // });
-
-    console.log("hi");
-    await createShows(10);
-
+    await createShows(11);
     process.exit();
 }
 
