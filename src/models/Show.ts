@@ -3,24 +3,19 @@ import { sequelize } from './index';
 
 export interface ShowAttributes {
     name: string;
-    userIds: string[];
-    description: string;
-    genre: string;
-    image: string;
+    userIds: number[];
+    description?: string;
+    genre?: string;
+    image?: string;
 }
 
 export interface ShowInstance extends Sequelize.Instance<ShowAttributes> {
   id: number;
-  name: string;
-  userIds: string[];
-  description: string;
-  genre: string;
-  image: string;
   createdAt: Date;
   updatedAt: Date;
 }
 
-const Show: Sequelize.Model<any, any> = sequelize.define(
+const Show: Sequelize.Model<ShowInstance, ShowAttributes> = sequelize.define(
   'Show',
   {
       name: Sequelize.STRING,
