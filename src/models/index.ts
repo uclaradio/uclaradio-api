@@ -2,7 +2,7 @@ import * as Sequelize from 'sequelize';
 
 // Configure connection to database.
 const databaseName =
-  process.env.NODE_ENV === 'test' ? 'sources-test' : 'sources';
+  process.env.NODE_ENV === 'test' ? 'uclaradio-test' : 'uclaradio';
 
 const sequelize = new Sequelize(
   databaseName,
@@ -28,3 +28,4 @@ sequelize
 export { sequelize };
 export { default as Show } from './Show';
 export { default as User } from './User';
+export { default as PageLink } from '.PageLink';
