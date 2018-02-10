@@ -8,15 +8,12 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon",
+    "debug": "nodemon --inspect ./bin/www",
     "build": "tsc"
   },
   "nodemonConfig": {
-    "watch": [
-      "src"
-    ],
-    "ignore": [
-      "src/views/"
-    ],
+    "watch": ["src"],
+    "ignore": ["src/views/"],
     "ext": "ts",
     "exec": "tsc && node ./bin/www"
   },
