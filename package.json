@@ -15,7 +15,7 @@
     "watch": ["src"],
     "ignore": ["src/views/"],
     "ext": "ts",
-    "exec": "tsc && node ./bin/www"
+    "exec": "tsc && node"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
