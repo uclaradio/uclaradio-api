@@ -12,7 +12,6 @@ before_install:
   -in .travis/deploy.key.enc -out .travis/deploy.key -d
 script:
 - npm install codecov -g
-- yarn build
 - yarn test --coverage
 after_success:
 - codecov
