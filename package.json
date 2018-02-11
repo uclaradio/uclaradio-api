@@ -6,7 +6,7 @@
   "author": "UCLA Radio Web <radio.web@uclaradio.com>",
   "license": "GPL-3.0",
   "engines": {
-    "node": "8.x"
+    "node": "9.x"
   },
   "scripts": {
     "prestart": "tsc",
@@ -61,7 +61,8 @@
     "morgan": "^1.9.0",
     "pg": "^7.4.1",
     "sequelize": "^4.32.1",
-    "supertest": "^3.0.0"
+    "supertest": "^3.0.0",
+    "typescript": "^2.7.1"
   },
   "devDependencies": {
     "@types/body-parser": "^1.16.8",
@@ -71,15 +72,12 @@
     "@types/jest": "^22.1.2",
     "@types/morgan": "^1.7.35",
     "@types/sequelize": "^4.27.4",
-    "concurrently": "^3.5.1",
-    "jest": "^22.2.2",
-    "nodemon": "^1.14.11",
     "husky": "^0.14.3",
+    "jest": "^22.2.2",
     "lint-staged": "^6.1.0",
     "nodemon": "^1.14.11",
     "prettier": "^1.10.2",
     "ts-jest": "^22.0.3",
-    "typescript": "^2.6.2",
     "yarnhook": "^0.1.1"
   }
 }
