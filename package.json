@@ -8,18 +8,33 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon",
+    "debug": "nodemon --inspect ./bin/www",
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "precommit": "lint-staged",
+    "postmerge": "yarnhook",
+    "postcheckout": "yarnhook",
+    "postrewrite": "yarnhook"
   },
   "nodemonConfig": {
-    "watch": [
-      "src"
-    ],
-    "ignore": [
-      "src/views/"
-    ],
+    "watch": ["src"],
+    "ignore": ["src/views/"],
     "ext": "ts",
-    "exec": "tsc && node ./bin/www"
+    "exec": "tsc && node"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,json,css,scss,md}": ["prettier --write", "git add"]
+  },
+  "prettier": {
+    "overrides": [
+      {
+        "files": "*.{js,ts,tsx}",
+        "options": {
+          "singleQuote": true,
+          "trailingComma": "es5"
+        }
+      }
+    ]
   },
   "jest": {
     "globals": {
@@ -27,20 +42,13 @@
         "tsConfigFile": "tsconfig.json"
       }
     },
-    "moduleFileExtensions": [
-      "js",
-      "ts"
-    ],
+    "moduleFileExtensions": ["js", "ts"],
     "transform": {
       "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testMatch": [
-      "**/src/**/*.test.(js|ts)"
-    ],
+    "testMatch": ["**/src/**/*.test.(js|ts)"],
     "testEnvironment": "node",
-    "coverageReporters": [
-      "json"
-    ]
+    "coverageReporters": ["json"]
   },
   "dependencies": {
     "body-parser": "^1.18.2",
@@ -63,7 +71,12 @@
     "concurrently": "^3.5.1",
     "jest": "^22.2.2",
     "nodemon": "^1.14.11",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.1.0",
+    "nodemon": "^1.14.11",
+    "prettier": "^1.10.2",
     "ts-jest": "^22.0.3",
-    "typescript": "^2.6.2"
+    "typescript": "^2.6.2",
+    "yarnhook": "^0.1.1"
   }
 }
