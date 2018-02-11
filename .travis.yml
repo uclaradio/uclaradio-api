@@ -17,7 +17,7 @@ after_success:
 - chmod 600 .travis/deploy.key
 - ssh-add .travis/deploy.key
 - ssh-keyscan 159.89.155.36 >> ~/.ssh/known_hosts
-- git remote add deploy dokku@159.89.155.36
+- git remote add deploy dokku@159.89.155.36:uclaradio-api
 - git config --global push.default simple
 - git push deploy master
 before_install:
