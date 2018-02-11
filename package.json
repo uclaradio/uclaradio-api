@@ -5,11 +5,14 @@
   "repository": "https://github.com/uclaradio/uclaradio-api",
   "author": "UCLA Radio Web <radio.web@uclaradio.com>",
   "license": "GPL-3.0",
+  "engines": {
+    "node": "8.x"
+  },
   "scripts": {
+    "prestart": "tsc",
     "start": "node ./bin/www",
     "dev": "nodemon",
     "debug": "nodemon --inspect ./bin/www",
-    "build": "tsc",
     "test": "jest",
     "precommit": "lint-staged",
     "postmerge": "yarnhook",
