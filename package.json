@@ -9,13 +9,31 @@
     "start": "node ./bin/www",
     "dev": "nodemon",
     "debug": "nodemon --inspect ./bin/www",
-    "build": "tsc"
+    "build": "tsc",
+    "precommit": "lint-staged",
+    "postmerge": "yarnhook",
+    "postcheckout": "yarnhook",
+    "postrewrite": "yarnhook"
   },
   "nodemonConfig": {
     "watch": ["src"],
     "ignore": ["src/views/"],
     "ext": "ts",
     "exec": "tsc && node"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,json,css,scss,md}": ["prettier --write", "git add"]
+  },
+  "prettier": {
+    "overrides": [
+      {
+        "files": "*.{js,ts,tsx}",
+        "options": {
+          "singleQuote": true,
+          "trailingComma": "es5"
+        }
+      }
+    ]
   },
   "dependencies": {
     "body-parser": "^1.18.2",
@@ -34,7 +52,11 @@
     "@types/morgan": "^1.7.35",
     "@types/sequelize": "^4.27.4",
     "concurrently": "^3.5.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.1.0",
     "nodemon": "^1.14.11",
-    "typescript": "^2.6.2"
+    "prettier": "^1.10.2",
+    "typescript": "^2.6.2",
+    "yarnhook": "^0.1.1"
   }
 }
