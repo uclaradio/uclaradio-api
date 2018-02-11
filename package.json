@@ -8,6 +8,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon",
+    "debug": "nodemon --inspect ./bin/www",
     "build": "tsc",
     "precommit": "lint-staged",
     "postmerge": "yarnhook",
@@ -18,7 +19,7 @@
     "watch": ["src"],
     "ignore": ["src/views/"],
     "ext": "ts",
-    "exec": "tsc && node ./bin/www"
+    "exec": "tsc && node"
   },
   "lint-staged": {
     "*.{js,ts,tsx,json,css,scss,md}": ["prettier --write", "git add"]
