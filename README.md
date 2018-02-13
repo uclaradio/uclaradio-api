@@ -1,5 +1,13 @@
 # UCLA Radio API
 
+[![Travis CI](https://img.shields.io/travis/uclaradio/uclaradio-api.svg?style=flat)](https://travis-ci.org/uclaradio/uclaradio-api)
+[![Codecov](https://img.shields.io/codecov/c/github/uclaradio/uclaradio-api.svg)](https://codecov.io/github/uclaradio/uclaradio-api)
+[![Dependencies](https://david-dm.org/uclaradio/uclaradio-api/status.svg?style=flat)](https://david-dm.org/uclaradio/uclaradio-api)
+[![Dev dependencies](https://david-dm.org/uclaradio/uclaradio-api/dev-status.svg?style=flat)](https://david-dm.org/uclaradio/uclaradio-api?type=dev)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat)](https://github.com/prettier/prettier)
+[![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg?style=flat)](https://github.com/facebook/jest)
+[![license](https://img.shields.io/github/license/uclaradio/uclaradio-api.svg)](/LICENSE)
+
 The API for UCLA Radio's website and mobile apps. It's powered by an Express
 server with a PostgreSQL backend and a GraphQL endpoint.
 
