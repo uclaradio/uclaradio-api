@@ -1,4 +1,7 @@
 import * as Sequelize from 'sequelize';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 // Configure connection to database.
 const databaseName =
