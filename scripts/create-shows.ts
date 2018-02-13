@@ -1,7 +1,6 @@
 import * as faker from 'faker';
 import { sequelize, Show } from '../src/models';
 
-
 function createShows(n: number) {
   const promises = [];
   let randoms = Array(4).fill(Math.floor(Math.random() * 9));
@@ -21,9 +20,9 @@ function createShows(n: number) {
 }
 
 async function main() {
-    await sequelize.sync({ force: true});
-    await createShows(11);
-    process.exit();
+  await sequelize.sync({ force: true });
+  await createShows(11);
+  process.exit();
 }
 
 main();
