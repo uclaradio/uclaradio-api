@@ -15,5 +15,5 @@ script:
 - yarn test --coverage
 after_success:
 - codecov
-- chmod +x ./travis/deploy.sh
-- ./deploy.sh
+- chmod +x .travis/deploy.sh
+- .travis/deploy.sh
