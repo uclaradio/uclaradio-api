@@ -78,6 +78,7 @@
     "lint-staged": "^6.1.0",
     "nodemon": "^1.14.11",
     "prettier": "^1.10.2",
+    "ts-jest": "^22.0.4",
     "ts-node": "^4.1.0",
     "yarnhook": "^0.1.1"
   }
