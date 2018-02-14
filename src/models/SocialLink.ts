@@ -4,7 +4,7 @@ import { sequelize } from './index';
 export interface SocialLinkAttributes {
   show_id: number;
   url: string;
-  social: enum;
+  // social: enum;
 }
 
 export interface SocialLinkInstance
@@ -20,14 +20,14 @@ const SocialLink: Sequelize.Model<
 > = sequelize.define('SocialLink', {
   show_id: Sequelize.INTEGER,
   url: Sequelize.STRING,
-  social: Sequelize.ENUM(
-    'FACEBOOK',
-    'INSTAGRAM',
-    'SOUNDCLOUD',
-    'MIXCLOUD',
-    'TWITTER',
-    'TUMBLR'
-  ),
+  // social: Sequelize.ENUM(
+  //   'FACEBOOK',
+  //   'INSTAGRAM',
+  //   'SOUNDCLOUD',
+  //   'MIXCLOUD',
+  //   'TWITTER',
+  //   'TUMBLR'
+  // ),
 });
 
 sequelize.sync();
