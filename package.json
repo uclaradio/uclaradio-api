@@ -37,6 +37,7 @@
     "@types/morgan": "^1.7.35",
     "@types/sequelize": "^4.27.4",
     "concurrently": "^3.5.1",
+    "faker": "^4.1.0",
     "nodemon": "^1.14.11",
     "typescript": "^2.6.2"
   }
