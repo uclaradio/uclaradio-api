@@ -1,4 +1,7 @@
 import * as Sequelize from 'sequelize';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 // Configure connection to database.
 const databaseName =
@@ -29,3 +32,4 @@ export { sequelize };
 export { default as Show } from './Show';
 export { default as User } from './User';
 export { default as PromoBanner } from './PromoBanner';
+export { default as SocialLink } from './SocialLink';
