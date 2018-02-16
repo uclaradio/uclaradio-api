@@ -7,7 +7,7 @@ function createLinks(n) {
     promises.push(
       SocialLink.create({
         show_id: 1,
-        url: "http://google.com",
+        url: 'http://google.com',
         social: 'FACEBOOK',
       })
     );

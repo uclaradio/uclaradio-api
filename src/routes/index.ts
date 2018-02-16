@@ -4,7 +4,7 @@ const router = Router();
 
 /** Main Pages */
 router.get('/', (req: Request, res: Response) => {
-  res.json('test');
+  res.json('Hello World');
 });
 
 export default router;
