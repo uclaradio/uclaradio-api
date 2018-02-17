@@ -1,11 +1,11 @@
-import * as request from "supertest";
-import * as app from "./app";
+import * as request from 'supertest';
+import * as app from './app';
 
-describe("GET /", () => {
-  it("should return hello world", () => {
+describe('GET /', () => {
+  it('should return hello world', () => {
     return request(app)
-      .get("/")
+      .get('/')
       .expect(200)
-      .expect("Content-Type", /json/);
+      .expect('Content-Type', /json/);
   });
 });
