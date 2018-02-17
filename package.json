@@ -51,7 +51,8 @@
     },
     "testMatch": ["**/src/**/*.test.(js|ts)"],
     "testEnvironment": "node",
-    "coverageReporters": ["json"]
+    "coverageReporters": ["json"],
+    "coverageDirectory": "./coverage"
   },
   "dependencies": {
     "@types/body-parser": "^1.16.8",
