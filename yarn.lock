@@ -62,6 +62,10 @@
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/@types/geojson/-/geojson-1.0.6.tgz#3e02972728c69248c2af08d60a48cbb8680fffdf"
 
+"@types/graphql@^0.12.4":
+  version "0.12.4"
+  resolved "https://registry.yarnpkg.com/@types/graphql/-/graphql-0.12.4.tgz#d43bb55d45c6de0178bbd11dd59d04fd42138d94"
+
 "@types/jest@^22.1.2":
   version "22.1.2"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-22.1.2.tgz#813a79ec98221633845627636dbc606f31220dbc"
@@ -1723,6 +1727,13 @@ graphql-extensions@^0.0.x:
   dependencies:
     core-js "^2.5.3"
     source-map-support "^0.5.1"
+
+graphql-import@^0.4.3:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/graphql-import/-/graphql-import-0.4.3.tgz#5fc68244e0908d6d8f2b91658a82be3d11f4ec62"
+  dependencies:
+    graphql "^0.13.0"
+    lodash "^4.17.4"
 
 graphql-tools@^2.20.2:
   version "2.20.2"

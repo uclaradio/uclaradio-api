@@ -1,44 +1,43 @@
-import { makeExecutableSchema } from "graphql-tools";
+import * as path from 'path';
+import { GraphQLScalarType } from 'graphql';
+import { Kind } from 'graphql/language';
+import { importSchema } from 'graphql-import';
+import { makeExecutableSchema } from 'graphql-tools';
 
-const djs = [
-  {
-    id: 1,
-    name: "B",
-    picture: "pic.jpg",
-    bio: "One half of Web.",
-    shows: ["Geek Squad"]
-  },
-  {
-    id: 2,
-    name: "Huckleberry Spin",
-    picture: "ya.png",
-    bio: "The other half of Web.",
-    shows: ["The Spicy Hour"]
-  }
-];
-
-// The GraphQL schema in string form
-const typeDefs = `
-  type DJ {
-    id: ID!
-    name: String!
-    picture: String
-    bio: String
-    shows: [String]
-  }
-
-  type Query { djs: [DJ] }
-`;
+import { shows, djs } from './mock-data';
 
 // The resolvers
 const resolvers = {
-  Query: { djs: () => djs }
+  Query: {
+    djs: () => djs,
+    dj: (id: Number) => djs[0],
+    shows: () => shows,
+    show: (id: Number) => shows[0],
+  },
+  Date: new GraphQLScalarType({
+    name: 'Date',
+    description: 'Date custom scalar type',
+    parseValue(value) {
+      return new Date(value); // value from the client
+    },
+    serialize(value) {
+      return value.getTime(); // value sent to the client
+    },
+    parseLiteral(ast) {
+      if (ast.kind === Kind.INT) {
+        return parseInt(ast.value, 10); // ast value is always in string format
+      }
+      return null;
+    },
+  }),
 };
+
+const typeDefs = importSchema(path.join(__dirname, './schema/index.graphql'));
 
 // Put together a schema
 const schema = makeExecutableSchema({
   typeDefs,
-  resolvers
+  resolvers,
 });
 
 export default schema;
