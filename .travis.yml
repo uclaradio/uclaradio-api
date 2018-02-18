@@ -12,7 +12,7 @@ before_install:
   -in .travis/deploy.key.enc -out .travis/deploy.key -d
 script:
 - npm install codecov -g
-- yarn test --coverage
+- yarn test
 after_success:
 - codecov
 - chmod +x .travis/deploy.sh
