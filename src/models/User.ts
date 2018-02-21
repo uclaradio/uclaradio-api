@@ -1,5 +1,5 @@
 import * as Sequelize from 'sequelize';
-import { sequelize } from './index';
+import { sequelize, Show } from './index';
 
 export interface UserAttributes {}
 
@@ -15,10 +15,12 @@ const User: Sequelize.Model<UserInstance, UserAttributes> = sequelize.define(
     password: Sequelize.STRING,
     phone: Sequelize.STRING,
     picture: Sequelize.STRING,
-    shows: Sequelize.ARRAY(Sequelize.TEXT)
+    shows: Sequelize.ARRAY(Sequelize.TEXT),
   }
 );
 
-sequelize.sync();
+User.belongsToMany(Show, { through: 'UserShow' });
+
+// sequelize.sync();
 
 export default User;
