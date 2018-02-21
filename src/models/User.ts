@@ -8,14 +8,18 @@ export interface UserInstance {}
 const User: Sequelize.Model<UserInstance, UserAttributes> = sequelize.define(
   'User',
   {
-    bio: Sequelize.STRING,
-    djName: Sequelize.STRING,
     email: Sequelize.STRING,
-    fullName: Sequelize.STRING,
     password: Sequelize.STRING,
+    fullName: Sequelize.STRING,
     phone: Sequelize.STRING,
     picture: Sequelize.STRING,
-    shows: Sequelize.ARRAY(Sequelize.TEXT),
+
+    isDJ: Sequelize.BOOLEAN,
+    djName: Sequelize.STRING,
+    bio: Sequelize.STRING,
+
+    isManager: Sequelize.BOOLEAN,
+    isAdmin: Sequelize.BOOLEAN,
   }
 );
 

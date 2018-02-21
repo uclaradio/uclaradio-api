@@ -19,10 +19,18 @@ const Show: Sequelize.Model<ShowInstance, ShowAttributes> = sequelize.define(
   'Show',
   {
     name: Sequelize.STRING,
-    userIds: Sequelize.ARRAY(Sequelize.INTEGER),
     description: Sequelize.STRING,
     genre: Sequelize.STRING,
-    image: Sequelize.STRING,
+    imageURL: Sequelize.STRING,
+    day: Sequelize.ENUM(
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+      'Sunday'
+    ),
     startTime: Sequelize.TIME,
     endTime: Sequelize.TIME,
   }
