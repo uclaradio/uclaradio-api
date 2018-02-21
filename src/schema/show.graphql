@@ -19,8 +19,8 @@ scalar Date
 type Show {
   id: ID!
   title: String!
-  startTime: Date!
-  endTime: Date!
+  nextShowDate: Date!
+  duration: Int!
   djs: [DJ]!
   description: String
   genre: String
