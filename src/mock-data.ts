@@ -1,3 +1,5 @@
+// import * as faker from 'faker';
+
 export const djs = [
   {
     id: 1,
@@ -15,14 +17,29 @@ export const djs = [
   },
 ];
 
+// for (let i = 0; i < 100; i++) {
+//   const shows =
+//     i % 7 == 0
+//       ? [faker.company.companyName()]
+//       : [faker.company.companyName(), faker.company.companyName()];
+
+//   djs.push({
+//     id: i,
+//     name: faker.name.findName(),
+//     picture: faker.internet.avatar(),
+//     bio: faker.lorem.sentence(),
+//     shows,
+//   });
+// }
+
 export const shows = [
   {
     id: 1,
     title: 'Musicology',
     description: 'Ya',
     genre: 'Music',
-    startTime: new Date(),
-    endTime: new Date(),
+    startTime: '2018-02-18T17:00:00.000-08:00',
+    endTime: '2018-02-18T18:00:00.000-08:00',
     picture: 'pic.jpg',
     bio: 'Ya',
     djs: [djs[0]],
