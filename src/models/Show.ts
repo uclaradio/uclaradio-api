@@ -15,27 +15,22 @@ export interface ShowInstance extends Sequelize.Instance<ShowAttributes> {
   updatedAt: Date;
 }
 
-const Show: Sequelize.Model<ShowInstance, ShowAttributes> = sequelize.define(
-  'Show',
-  {
-    name: Sequelize.STRING,
-    description: Sequelize.STRING,
-    genre: Sequelize.STRING,
-    imageURL: Sequelize.STRING,
-    day: Sequelize.ENUM(
-      'Monday',
-      'Tuesday',
-      'Wednesday',
-      'Thursday',
-      'Friday',
-      'Saturday',
-      'Sunday'
-    ),
-    startTime: Sequelize.TIME,
-    endTime: Sequelize.TIME,
-  }
-);
-
-Show.belongsToMany(User, { through: 'UserShow' });
+const Show: Sequelize.Model<any, any> = sequelize.define('Show', {
+  title: Sequelize.STRING,
+  description: Sequelize.STRING,
+  genre: Sequelize.STRING,
+  imageURL: Sequelize.STRING,
+  day: Sequelize.ENUM(
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+    'Sunday'
+  ),
+  startTime: Sequelize.TIME,
+  endTime: Sequelize.TIME,
+});
 
 export default Show;

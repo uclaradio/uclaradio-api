@@ -14,7 +14,7 @@ const sequelize = new Sequelize(
   {
     host: process.env.DATABASE_HOST,
     dialect: 'postgres',
-    logging: false,
+    // logging: false,
     operatorsAliases: false,
   }
 );
@@ -28,7 +28,13 @@ sequelize
     console.error('Unable to connect to the database:', err);
   });
 
+import Show from './Show';
+import User from './User';
+
+Show.belongsToMany(User, { through: 'UserShow' });
+User.belongsToMany(Show, { through: 'UserShow' });
+
 export { sequelize };
-export { default as Show } from './Show';
-export { default as User } from './User';
-export { default as SocialLink } from './SocialLink';
+export { Show };
+export { User };
+// export { default as SocialLink } from './SocialLink';
