@@ -49,7 +49,7 @@ const Show: Sequelize.Model<any, any> = sequelize.define('Show', {
     'Sunday'
   ),
   startTime: Sequelize.TIME,
-  duration: Sequelize.TINYINT,
+  duration: Sequelize.INTEGER,
 });
 
 export default Show;
