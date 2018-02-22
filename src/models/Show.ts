@@ -1,16 +1,6 @@
 import * as Sequelize from 'sequelize';
 import { sequelize, User } from './index';
 
-enum Day {
-  Monday = 'Monday',
-  Tuesday = 'Tuesday',
-  Wednesday = 'Wednesday',
-  Thursday = 'Thursday',
-  Friday = 'Friday',
-  Saturday = 'Saturday',
-  Sunday = 'Sunday',
-}
-
 export interface ShowAttributes {
   name: string;
   userIds: number[];
