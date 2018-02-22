@@ -4,6 +4,15 @@ import { sequelize, Show, User, SocialLink } from '../src/models';
 const userNumber = 50;
 const showNumber = 45;
 
+// See https://github.com/Marak/faker.js/issues/541
+function getRandomDay() {
+  Day[
+    faker.helpers.replaceSymbolWithNumber(
+      faker.random.arrayElement(Object.getOwnPropertyNames(Day))
+    )
+  ];
+}
+
 async function main() {
   await sequelize.sync({ force: true });
 
@@ -15,7 +24,7 @@ async function main() {
       genre: faker.company.bsBuzz(),
       imageURL: faker.image.imageUrl(),
 
-      // day: faker.random.number({ min: 0, max: 6 }),
+      day: faker.random.number({ min: 0, max: 6 }),
       // startTime: faker.date.
       duration: faker.random.number({ min: 1, max: 2 }),
     });

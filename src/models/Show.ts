@@ -2,13 +2,13 @@ import * as Sequelize from 'sequelize';
 import { sequelize, User } from './index';
 
 enum Day {
-  'Monday',
-  'Tuesday',
-  'Wednesday',
-  'Thursday',
-  'Friday',
-  'Saturday',
-  'Sunday',
+  Monday = 'Monday',
+  Tuesday = 'Tuesday',
+  Wednesday = 'Wednesday',
+  Thursday = 'Thursday',
+  Friday = 'Friday',
+  Saturday = 'Saturday',
+  Sunday = 'Sunday',
 }
 
 export interface ShowAttributes {
@@ -40,13 +40,13 @@ const Show: Sequelize.Model<any, any> = sequelize.define('Show', {
   genre: Sequelize.STRING,
   imageURL: Sequelize.STRING,
   day: Sequelize.ENUM(
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday',
-    'Sunday'
+    Day.Monday,
+    Day.Tuesday,
+    Day.Wednesday,
+    Day.Thursday,
+    Day.Friday,
+    Day.Saturday,
+    Day.Sunday
   ),
   startTime: Sequelize.TIME,
   duration: Sequelize.INTEGER,

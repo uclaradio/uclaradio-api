@@ -1,17 +1,10 @@
 import * as Sequelize from 'sequelize';
-import { sequelize } from './index';
 
-enum SocialLinkType {
-  Facebook,
-  Instagram,
-  Soundcloud,
-  Mixcloud,
-  Twitter,
-  Tumblr,
-}
+import { sequelize } from './index';
+import { SocialSite } from '../types';
 
 export interface SocialLinkAttributes {
-  type: SocialLinkType;
+  type: SocialSite;
   url: string;
 }
 
@@ -26,12 +19,12 @@ const SocialLink: Sequelize.Model<
   SocialLinkAttributes
 > = sequelize.define('SocialLink', {
   type: Sequelize.ENUM(
-    'FACEBOOK',
-    'INSTAGRAM',
-    'SOUNDCLOUD',
-    'MIXCLOUD',
-    'TWITTER',
-    'TUMBLR'
+    SocialSite.Facebook,
+    SocialSite.Instagram,
+    SocialSite.Mixcloud,
+    SocialSite.Soundcloud,
+    SocialSite.Tumblr,
+    SocialSite.Twitter
   ),
   url: Sequelize.STRING,
 });
