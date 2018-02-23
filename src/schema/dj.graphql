@@ -1,0 +1,9 @@
+# import Show from "show.graphql"
+
+type DJ {
+  id: ID!
+  name: String!
+  bio: String
+  picture: String
+  shows: [Show]
+}

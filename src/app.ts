@@ -1,17 +1,18 @@
 import * as express from 'express';
-import { Express } from 'express-serve-static-core';
+import { Request, Response, NextFunction } from 'express';
 import * as logger from 'morgan';
 import * as cookieParser from 'cookie-parser';
 import * as bodyParser from 'body-parser';
+import { graphqlExpress, graphiqlExpress } from 'apollo-server-express';
 import * as dotenv from 'dotenv';
+
+import { notFoundHandler, errorHandler } from './errorHandling';
+import schema from './schema';
 
 dotenv.config();
 
-import { notFoundHandler, errorHandler } from './errorHandling';
-import router from './routes';
-
 /** Create Express server */
-const app: Express = express();
+const app = express();
 
 /** Logging */
 app.use(logger('dev'));
@@ -21,7 +22,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 /** Routing */
-app.use('/', router);
+app.get('/', (req: Request, res: Response) => {
+  res.json('Hello World');
+});
+
+app.use('/graphql', graphqlExpress({ schema }));
+if (process.env.NODE_ENV !== 'production') {
+  app.get('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }));
+}
 
 /** Error Handling */
 app.use(notFoundHandler);

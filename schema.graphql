@@ -10,24 +10,8 @@ type DJ {
 }
 
 # Shows
-type SocialLinks {
-  facebook: String
-  twitter: String
-  tumbler: String
-  soundcloud: String
-  mixcloud: String
-}
 
-type Show {
-  id: ID!
-  title: String!
-  startTime: Date!
-  endTime: Date!
-  djs: [DJ]!
-  description: String
-  genre: String
-  socialLinks: SocialLinks
-}
+
 
 # Social Media posts
 type Post {
