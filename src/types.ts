@@ -8,6 +8,33 @@ export enum Day {
   Sunday = 'Sunday',
 }
 
+export enum Hour {
+  TwelveAM,
+  OneAM,
+  TwoAM,
+  ThreeAM,
+  FourAM,
+  FiveAM,
+  SixAM,
+  SevenAM,
+  EightAM,
+  NineAM,
+  TenAM,
+  ElevenAM,
+  TwelvePM,
+  OnePM,
+  TwoPM,
+  ThreePM,
+  FourPM,
+  FivePM,
+  SixPM,
+  SevenPM,
+  EightPM,
+  NinePM,
+  TenPM,
+  ElevenPM,
+}
+
 export enum SocialSite {
   Facebook = 'Facebook',
   Instagram = 'Instagram',
