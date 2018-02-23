@@ -31,4 +31,5 @@ sequelize
 export { sequelize };
 export { default as Show } from './Show';
 export { default as User } from './User';
+export { default as PromoBanner } from './PromoBanner';
 export { default as SocialLink } from './SocialLink';
