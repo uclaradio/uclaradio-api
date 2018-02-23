@@ -1,5 +1,5 @@
 import * as Sequelize from 'sequelize';
-import { sequelize } from './index';
+import { sequelize, User } from './index';
 
 export interface ShowAttributes {
   name: string;
@@ -28,6 +28,6 @@ const Show: Sequelize.Model<ShowInstance, ShowAttributes> = sequelize.define(
   }
 );
 
-sequelize.sync();
+Show.belongsToMany(User, { through: 'UserShow' });
 
 export default Show;

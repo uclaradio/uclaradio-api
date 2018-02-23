@@ -1,0 +1,10 @@
+# import DJ from "dj.graphql"
+# import Show from "show.graphql"
+
+type Query {
+  djs: [DJ]!
+  dj(id: ID!): DJ!
+
+  shows: [Show]!
+  show(id: ID!): Show!
+}

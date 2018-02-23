@@ -1,0 +1,28 @@
+# import DJ from "dj.graphql"
+
+enum SocialSite {
+  FACEBOOK
+  TWITTER
+  INSTAGRAM
+  TUMBLR
+  SOUNDCLOUD
+  MIXCLOUD
+}
+
+type SocialLink {
+  site: SocialSite
+  link: String
+}
+
+scalar Date
+
+type Show {
+  id: ID!
+  title: String!
+  startTime: Date!
+  endTime: Date!
+  djs: [DJ]!
+  description: String
+  genre: String
+  socialLinks: [SocialLink]
+}
