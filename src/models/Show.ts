@@ -1,5 +1,8 @@
 import * as Sequelize from 'sequelize';
+
+import { Day } from '../types';
 import { sequelize, User } from './index';
+
 
 export interface ShowAttributes {
   name: string;
