@@ -31,9 +31,10 @@ sequelize
 import Show from './Show';
 import User from './User';
 import SocialLink from './SocialLink';
+import PromoBanner from './PromoBanner';
 
 Show.belongsToMany(User, { through: 'UserShow' });
 User.belongsToMany(Show, { through: 'UserShow' });
 Show.hasMany(SocialLink);
 
-export { sequelize, Show, User, SocialLink };
+export { sequelize, Show, User, SocialLink, PromoBanner };
