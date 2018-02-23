@@ -5,8 +5,8 @@ function createPromoBanners(n) {
   const promises = [];
   for (let i = 0; i < n; i += 1) {
     const promise = PromoBanner.create({
-      image: faker.image.imageUrl(),
-      url: faker.internet.url()
+      imageUrl: faker.image.imageUrl(),
+      linkUrl: faker.internet.url()
     });
     promise.catch((err) => {
       console.log(err.message);
