@@ -1,16 +1,24 @@
 import * as faker from 'faker';
 
 import { sequelize, Show, User, SocialLink } from '../src/models';
-import { Day } from '../src/types';
+import { Day, SocialSite } from '../src/types';
 
 const userNumber = 50;
 const showNumber = 45;
 
 // See https://github.com/Marak/faker.js/issues/541
 function getRandomDay() {
-  Day[
+  return Day[
     faker.helpers.replaceSymbolWithNumber(
       faker.random.arrayElement(Object.getOwnPropertyNames(Day))
+    )
+  ];
+}
+
+function getRandomSocialSite() {
+  return SocialSite[
+    faker.helpers.replaceSymbolWithNumber(
+      faker.random.arrayElement(Object.getOwnPropertyNames(SocialSite))
     )
   ];
 }
@@ -30,6 +38,15 @@ async function main() {
       // startTime: faker.date.
       duration: faker.random.number({ min: 1, max: 2 }),
     });
+
+    for (let j = 0; j < faker.random.number({ min: 0, max: 3 }); j++) {
+      const link = await SocialLink.create({
+        type: getRandomSocialSite(),
+        url: faker.internet.url(),
+      });
+      show.addSocialLink(link);
+    }
+
     shows.push(show);
   }
 
