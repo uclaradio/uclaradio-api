@@ -1,10 +1,14 @@
 import * as faker from 'faker';
 
-import { sequelize, Show, User, SocialLink } from '../src/models';
+import { sequelize, Show, User, SocialLink, PromoBanner } from '../src/models';
 import { Day, SocialSite } from '../src/types';
 
 const userNumber = 50;
 const showNumber = 45;
+const promoBannerNumber = 4;
+
+let shows = [];
+let users = [];
 
 // See https://github.com/Marak/faker.js/issues/541
 function getRandomDay() {
@@ -23,10 +27,7 @@ function getRandomSocialSite() {
   ];
 }
 
-async function main() {
-  await sequelize.sync({ force: true });
-
-  let shows = [];
+async function createShows() {
   for (let i = 0; i < showNumber; i++) {
     const show = await Show.create({
       title: faker.company.bs(),
@@ -49,8 +50,9 @@ async function main() {
 
     shows.push(show);
   }
+}
 
-  let users = [];
+async function createUsers() {
   for (let i = 0; i < userNumber; i++) {
     const user = await User.create({
       email: faker.internet.email(),
@@ -67,11 +69,34 @@ async function main() {
       isAdmin: faker.random.boolean(),
     });
     if (faker.random.number({ min: 0, max: 6 }) != 0) {
-      user.addShow(shows[faker.random.number({ min: 0, max: showNumber })]);
+      user.addShow(
+        shows[
+          faker.random.number({
+            min: 0,
+            max: showNumber,
+          })
+        ]
+      );
     }
 
     users.push(user);
   }
+}
+
+async function createPromoBanners() {
+  for (let i = 0; i < promoBannerNumber; i += 1) {
+    await PromoBanner.create({
+      imageUrl: faker.image.imageUrl(),
+      linkUrl: faker.internet.url(),
+    });
+  }
+}
+
+async function main() {
+  await sequelize.sync({ force: true });
+  await createShows();
+  await createUsers();
+  await createPromoBanners();
 
   process.exit();
 }
