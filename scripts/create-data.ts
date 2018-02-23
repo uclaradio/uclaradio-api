@@ -1,5 +1,7 @@
 import * as faker from 'faker';
+
 import { sequelize, Show, User, SocialLink } from '../src/models';
+import { Day } from '../src/types';
 
 const userNumber = 50;
 const showNumber = 45;
@@ -24,7 +26,7 @@ async function main() {
       genre: faker.company.bsBuzz(),
       imageURL: faker.image.imageUrl(),
 
-      day: faker.random.number({ min: 0, max: 6 }),
+      day: getRandomDay(),
       // startTime: faker.date.
       duration: faker.random.number({ min: 1, max: 2 }),
     });
