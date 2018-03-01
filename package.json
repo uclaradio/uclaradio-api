@@ -9,7 +9,6 @@
     "node": "9.x"
   },
   "scripts": {
-    "setup": "ts-node ./scripts/create-data.ts",
     "prestart": "tsc && yarn copy-graphql",
     "start": "node ./bin/www",
     "debug": "nodemon --inspect ./bin/www",
@@ -59,7 +58,6 @@
     "@types/cookie-parser": "^1.4.1",
     "@types/dotenv": "^4.0.2",
     "@types/express": "^4.11.0",
-    "@types/faker": "^4.1.2",
     "@types/graphql": "^0.12.4",
     "@types/jest": "^22.1.2",
     "@types/morgan": "^1.7.35",
