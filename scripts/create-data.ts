@@ -64,7 +64,7 @@ async function createShows() {
       picture: faker.image.imageUrl(),
 
       isDJ: true,
-      djName: 'DJ' + faker.company.bs(),
+      djName: 'DJ ' + faker.lorem.word(),
       bio: faker.lorem.lines(1),
 
       isManager: faker.random.boolean(),
@@ -86,7 +86,7 @@ async function createUsers() {
       picture: faker.image.imageUrl(),
 
       isDJ: faker.random.boolean(),
-      djName: 'DJ' + faker.company.bs(),
+      djName: 'DJ ' + faker.lorem.word(),
       bio: faker.lorem.lines(1),
 
       isManager: faker.random.boolean(),

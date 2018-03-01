@@ -34,8 +34,8 @@ import SocialLink from './SocialLink';
 import PromoBanner from './PromoBanner';
 import PageLink from './PageLink';
 
-Show.belongsToMany(User, { through: 'UserShow' });
-User.belongsToMany(Show, { through: 'UserShow' });
-Show.hasMany(SocialLink);
+Show.belongsToMany(User, { through: 'UserShow', foreignKey: 'showId' });
+User.belongsToMany(Show, { through: 'UserShow', foreignKey: 'userId' });
+Show.hasMany(SocialLink, { foreignKey: 'showId' });
 
 export { sequelize, Show, User, SocialLink, PromoBanner, PageLink };
