@@ -2,6 +2,8 @@ import * as Sequelize from 'sequelize';
 
 import { Day, Hour } from '../types';
 import { sequelize, User } from './index';
+import { SocialLinkInstance } from './SocialLink';
+import { UserInstance } from './User';
 
 export interface ShowAttributes {
   title: string;
@@ -18,6 +20,8 @@ export interface ShowInstance extends Sequelize.Instance<ShowAttributes> {
   id: number;
   createdAt: Date;
   updatedAt: Date;
+  addSocialLink(s: SocialLinkInstance): void;
+  addUser(u: UserInstance): void;
 }
 
 const Show: Sequelize.Model<ShowInstance, ShowAttributes> = sequelize.define(

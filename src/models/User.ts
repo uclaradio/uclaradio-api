@@ -1,25 +1,45 @@
 import * as Sequelize from 'sequelize';
 import { sequelize, Show } from './index';
+import { ShowInstance } from './Show';
 
-export interface UserAttributes {}
+export interface UserAttributes {
+  email: string;
+  password: string;
+  fullName: string;
+  phone?: string;
+  picture?: string;
 
-export interface UserInstance {}
+  isDJ: boolean;
+  djName?: string;
+  bio?: string;
 
-const User: Sequelize.Model<any, any> = sequelize.define('User', {
-  email: Sequelize.STRING,
-  password: Sequelize.STRING,
-  fullName: Sequelize.STRING,
-  phone: Sequelize.STRING,
-  picture: Sequelize.STRING,
+  isManager: boolean;
+  isAdmin: boolean;
+}
 
-  isDJ: Sequelize.BOOLEAN,
-  djName: Sequelize.STRING,
-  bio: Sequelize.STRING,
+export interface UserInstance {
+  id: number;
+  createdAt: Date;
+  updatedAt: Date;
+  addShow(s: ShowInstance): void;
+}
 
-  isManager: Sequelize.BOOLEAN,
-  isAdmin: Sequelize.BOOLEAN,
-});
+const User: Sequelize.Model<UserInstance, UserAttributes> = sequelize.define(
+  'User',
+  {
+    email: Sequelize.STRING,
+    password: Sequelize.STRING,
+    fullName: Sequelize.STRING,
+    phone: Sequelize.STRING,
+    picture: Sequelize.STRING,
 
-//
+    isDJ: Sequelize.BOOLEAN,
+    djName: Sequelize.STRING,
+    bio: Sequelize.STRING,
+
+    isManager: Sequelize.BOOLEAN,
+    isAdmin: Sequelize.BOOLEAN,
+  }
+);
 
 export default User;
