@@ -15,7 +15,7 @@ export interface PageLinkInterface {
   updatedAt: Date;
 }
 
-const User: Sequelize.Model<
+const PageLink: Sequelize.Model<
   PageLinkInterface,
   PageLinkAttributes
 > = sequelize.define('PageLink', {
