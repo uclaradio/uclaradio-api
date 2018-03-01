@@ -18,9 +18,9 @@ function createPageLinks(n: number) {
 }
 
 async function main() {
-  await sequelize.sync({ force: true });
-  await createPageLinks(100);
-  process.exit();
+    await sequelize.sync({ force: true});
+    await createPageLinks(100);
+    process.exit();
 }
 
 main();

@@ -15,16 +15,16 @@ export interface PageLinkInterface {
   updatedAt: Date;
 }
 
-const User: Sequelize.Model<
-  PageLinkInterface,
-  PageLinkAttributes
-> = sequelize.define('PageLink', {
-  showId: Sequelize.INTEGER,
-  name: Sequelize.STRING,
-  description: Sequelize.STRING,
-  url: Sequelize.STRING,
-  image: Sequelize.STRING,
-});
+const User: Sequelize.Model<PageLinkInterface, PageLinkAttributes> = sequelize.define(
+  'PageLink',
+  {
+    showId: Sequelize.INTEGER,
+    name: Sequelize.STRING,
+    description: Sequelize.STRING,
+    url: Sequelize.STRING,
+    image: Sequelize.STRING
+  }
+);
 
 sequelize.sync();
 
