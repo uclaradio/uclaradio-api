@@ -1,14 +1,14 @@
-import * as faker from "faker";
-import { sequelize, PromoBanner } from "../src/models";
+import * as faker from 'faker';
+import { sequelize, PromoBanner } from '../src/models';
 
 function createPromoBanners(n) {
   const promises = [];
   for (let i = 0; i < n; i += 1) {
     const promise = PromoBanner.create({
       imageUrl: faker.image.imageUrl(),
-      linkUrl: faker.internet.url()
+      linkUrl: faker.internet.url(),
     });
-    promise.catch((err) => {
+    promise.catch(err => {
       console.log(err.message);
     });
     promises.push(promise);

@@ -1,4 +1,3 @@
-
 import User from './models/User';
 import { sequelize } from './models/index';
 import * as Sequelize from 'sequelize';
