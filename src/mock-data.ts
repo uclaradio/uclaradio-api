@@ -1,5 +1,3 @@
-// import * as faker from 'faker';
-
 export const djs = [
   {
     id: 1,
@@ -16,21 +14,6 @@ export const djs = [
     shows: ['The Spicy Hour'],
   },
 ];
-
-// for (let i = 0; i < 100; i++) {
-//   const shows =
-//     i % 7 == 0
-//       ? [faker.company.companyName()]
-//       : [faker.company.companyName(), faker.company.companyName()];
-
-//   djs.push({
-//     id: i,
-//     name: faker.name.findName(),
-//     picture: faker.internet.avatar(),
-//     bio: faker.lorem.sentence(),
-//     shows,
-//   });
-// }
 
 export const shows = [
   {
