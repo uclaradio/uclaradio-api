@@ -4,13 +4,13 @@ import { Day, Hour } from '../types';
 import { sequelize, User } from './index';
 
 export interface ShowAttributes {
-  name: string;
+  title: string;
   description?: string;
   genre?: string;
   imageURL?: string;
 
   day: Day;
-  startTime: Hour;
+  //startTime: Hour;
   duration: number;
 }
 
@@ -18,15 +18,6 @@ export interface ShowInstance extends Sequelize.Instance<ShowAttributes> {
   id: number;
   createdAt: Date;
   updatedAt: Date;
-
-  title: string;
-  description: string;
-  genre: string;
-  imageURL: string;
-
-  day: Day;
-  startTime: Hour;
-  duration: number;
 }
 
 const Show: Sequelize.Model<ShowInstance, ShowAttributes> = sequelize.define(
