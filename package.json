@@ -82,6 +82,7 @@
     "typescript": "^2.7.1"
   },
   "devDependencies": {
+    "faker": "^4.1.0",
     "husky": "^0.14.3",
     "jest": "^22.2.2",
     "lint-staged": "^6.1.0",
