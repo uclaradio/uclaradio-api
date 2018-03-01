@@ -1,11 +1,19 @@
 import * as faker from 'faker';
 
-import { sequelize, Show, User, SocialLink, PromoBanner } from '../src/models';
+import {
+  sequelize,
+  Show,
+  User,
+  SocialLink,
+  PromoBanner,
+  PageLink,
+} from '../src/models';
 import { Day, SocialSite } from '../src/types';
 
 const userNumber = 50;
 const showNumber = 45;
 const promoBannerNumber = 4;
+const pageLinkNumber = 20;
 
 let shows = [];
 let users = [];
@@ -36,7 +44,7 @@ async function createShows() {
       imageURL: faker.image.imageUrl(),
 
       day: getRandomDay(),
-      // startTime: faker.date.
+      //startTime: faker.date,
       duration: faker.random.number({ min: 1, max: 2 }),
     });
 
@@ -47,6 +55,22 @@ async function createShows() {
       });
       show.addSocialLink(link);
     }
+
+    const user = await User.create({
+      email: faker.internet.email(),
+      password: faker.internet.password(),
+      fullName: faker.name.findName(),
+      phone: faker.phone.phoneNumber(),
+      picture: faker.image.imageUrl(),
+
+      isDJ: true,
+      djName: 'DJ' + faker.company.bs(),
+      bio: faker.lorem.lines(1),
+
+      isManager: faker.random.boolean(),
+      isAdmin: faker.random.boolean(),
+    });
+    show.addUser(user);
 
     shows.push(show);
   }
@@ -68,7 +92,7 @@ async function createUsers() {
       isManager: faker.random.boolean(),
       isAdmin: faker.random.boolean(),
     });
-    if (faker.random.number({ min: 0, max: 6 }) != 0) {
+    if (faker.random.number({ min: 0, max: 2 }) != 0) {
       user.addShow(
         shows[
           faker.random.number({
@@ -92,11 +116,22 @@ async function createPromoBanners() {
   }
 }
 
+async function createPageLinks() {
+  for (let i = 0; i < pageLinkNumber; i += 1) {
+    await PageLink.create({
+      name: faker.company.bs(),
+      description: faker.hacker.phrase(),
+      linkUrl: faker.internet.url(),
+      imageUrl: faker.image.imageUrl(),
+    });
+  }
+}
 async function main() {
   await sequelize.sync({ force: true });
   await createShows();
   await createUsers();
   await createPromoBanners();
+  await createPageLinks();
 
   process.exit();
 }
