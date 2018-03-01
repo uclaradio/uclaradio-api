@@ -10,6 +10,7 @@
   },
   "scripts": {
     "prestart": "tsc && yarn copy-graphql",
+    "setup-shows": "ts-node ./scripts/create-shows.ts",
     "start": "node ./bin/www",
     "debug": "nodemon --inspect ./bin/www",
     "copy-graphql": "cpx \"src/schema/*.graphql\" dist/schema --verbose",
