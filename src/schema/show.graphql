@@ -14,15 +14,52 @@ type SocialLink {
   link: String
 }
 
-scalar Date
-
+"""
+A show on UCLA Radio.
+"""
 type Show {
+  """
+  A unique ID for the show.
+  """
   id: ID!
+
+  """
+  The title of the show.
+  """
   title: String!
-  nextShowDate: Date!
-  duration: Int!
-  djs: [DJ]!
+
+  """
+  A breif description of the show.
+  """
   description: String
+
+  """
+  The genre of the show.
+  """
   genre: String
+
+  """
+  An ISO 8601 formatted string of the next start time of the show.
+  """
+  startTime: String!
+
+  """
+  An ISO 8601 formatted string of the next end time of the show.
+  """
+  endTime: String!
+
+  """
+  The duration length of the show in hours.
+  """
+  duration: Int!
+
+  """
+  A list of DJs who host the show.
+  """
+  djs: [DJ]!
+
+  """
+  A list of links to various social media profiles of the show.
+  """
   socialLinks: [SocialLink]
 }

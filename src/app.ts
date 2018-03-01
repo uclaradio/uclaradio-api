@@ -23,13 +23,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 /** Routing */
 app.get('/', (req: Request, res: Response) => {
-  res.json('Hello World');
+  res.redirect('/graphiql');
 });
 
 app.use('/graphql', graphqlExpress({ schema }));
-if (process.env.NODE_ENV !== 'production') {
-  app.get('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }));
-}
+app.get('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }));
 
 /** Error Handling */
 app.use(notFoundHandler);

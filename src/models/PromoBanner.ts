@@ -21,4 +21,6 @@ const PromoBanner: Sequelize.Model<
   linkUrl: Sequelize.STRING,
 });
 
+sequelize.sync();
+
 export default PromoBanner;

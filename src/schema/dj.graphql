@@ -1,9 +1,31 @@
 # import Show from "show.graphql"
 
+"""
+A UCLA Radio DJ.
+"""
 type DJ {
+  """
+  A unique ID for the DJ.
+  """
   id: ID!
+
+  """
+  The name of the DJ. Note that this is their DJ name, not their actual name.
+  """
   name: String!
+
+  """
+  A short bio of the DJ.
+  """
   bio: String
+
+  """
+  A link to an image of the DJ.
+  """
   picture: String
+
+  """
+  The shows a DJ is a host on.
+  """
   shows: [Show]
 }
