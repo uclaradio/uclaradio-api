@@ -24,6 +24,4 @@ const PageLink: Sequelize.Model<
   imageUrl: Sequelize.STRING,
 });
 
-sequelize.sync();
-
 export default PageLink;

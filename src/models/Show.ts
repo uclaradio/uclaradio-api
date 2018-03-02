@@ -12,7 +12,7 @@ export interface ShowAttributes {
   imageURL?: string;
 
   day: Day;
-  //startTime: Hour;
+  startTime: Hour;
   duration: number;
 }
 

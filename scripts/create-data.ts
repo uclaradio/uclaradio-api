@@ -44,7 +44,7 @@ async function createShows() {
       imageURL: faker.image.imageUrl(),
 
       day: getRandomDay(),
-      //startTime: faker.date,
+      startTime: faker.random.number({ min: 0, max: 23 }),
       duration: faker.random.number({ min: 1, max: 2 }),
     });
 
