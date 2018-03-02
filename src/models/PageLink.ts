@@ -2,11 +2,10 @@ import * as Sequelize from 'sequelize';
 import { sequelize } from './index';
 
 export interface PageLinkAttributes {
-  showId: number;
   name: string;
   description?: string;
-  url?: string;
-  image?: string;
+  linkUrl?: string;
+  imageUrl?: string;
 }
 
 export interface PageLinkInterface {
@@ -19,13 +18,10 @@ const PageLink: Sequelize.Model<
   PageLinkInterface,
   PageLinkAttributes
 > = sequelize.define('PageLink', {
-  showId: Sequelize.INTEGER,
   name: Sequelize.STRING,
   description: Sequelize.STRING,
-  url: Sequelize.STRING,
-  image: Sequelize.STRING,
+  linkUrl: Sequelize.STRING,
+  imageUrl: Sequelize.STRING,
 });
-
-sequelize.sync();
 
 export default PageLink;

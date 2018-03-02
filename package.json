@@ -9,6 +9,7 @@
     "node": "9.x"
   },
   "scripts": {
+    "setup": "ts-node ./scripts/create-data.ts",
     "prestart": "tsc && yarn copy-graphql",
     "start": "node ./bin/www",
     "debug": "nodemon --inspect ./bin/www",
