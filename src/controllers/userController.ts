@@ -7,11 +7,11 @@ import { UserAttributes, UserInstance } from '../models/User';
  *
  * @param {UserAttributes} attributes An object of attributes for the user.
  */
-export async function createDJ(
+export async function createUser(
   attributes: UserAttributes
 ): Promise<UserInstance> {
-  const newDJ: UserInstance = await User.create(attributes);
-  return newDJ;
+  const newUser: UserInstance = await User.create(attributes);
+  return newUser;
 }
 
 /**
@@ -20,9 +20,9 @@ export async function createDJ(
  * @param {numberx} id
  * @returns {} DJ
  */
-export async function getDJ(id: number): Promise<ShowInstance | null> {
-  const dj: ShowInstance | null = await User.findById(id);
-  return dj;
+export async function getUser(id: number): Promise<ShowInstance | null> {
+  const user: ShowInstance | null = await User.findById(id);
+  return user;
 }
 
 /**
@@ -30,9 +30,9 @@ export async function getDJ(id: number): Promise<ShowInstance | null> {
  *
  * @returns DJs
  */
-export function getAllDJs(): Promise<ShowInstance[]> {
-  const djs: ShowInstance[] = await User.all();
-  return djs;
+export function getAllUsers(): Promise<ShowInstance[]> {
+  const users: ShowInstance[] = await User.all();
+  return users;
 }
 
 /**
@@ -41,7 +41,7 @@ export function getAllDJs(): Promise<ShowInstance[]> {
  * @param id
  * @param attributes
  */
-export async function updateDJ(
+export async function updateUser(
   id: number,
   attributes: UserAttributes
 ): Promise<UserInstance | null> {
@@ -54,7 +54,7 @@ export async function updateDJ(
     return updatedUsers[0];
   } else if (numberOfUpdatedUsers !== 0) {
     throw new Error(
-      'More than 1 rows updated from single id in `updateDJ`! This is bad!'
+      'More than 1 rows updated from single id in `updateUser`! This is bad!'
     );
   }
   return null;
@@ -65,7 +65,7 @@ export async function updateDJ(
  *
  * @param id
  */
-export async function deleteDJ(id: number): Promise<boolean> {
+export async function deleteUser(id: number): Promise<boolean> {
   const numberOfDeletedUsers = await User.destroy({
     where: { id },
   });
