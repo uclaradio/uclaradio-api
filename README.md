@@ -144,6 +144,14 @@ the database. There
 [a lot of great options](https://wiki.postgresql.org/wiki/Community_Guide_to_PostgreSQL_GUI_Tools),
 but we recommend [PSequel](http://www.psequel.com)!
 
+Run the following command to populate the `uclaradio` database with our tables and test data:
+
+```
+yarn setup
+```
+
+If the script hangs, press `CTRL+C` and run the above command again.
+
 ##### Windows
 
 We're working on this! If you know how to install Postgres on Windows, please

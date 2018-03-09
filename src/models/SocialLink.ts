@@ -1,15 +1,15 @@
 import * as Sequelize from 'sequelize';
+
 import { sequelize } from './index';
+import { SocialSite } from '../types';
 
 export interface SocialLinkAttributes {
-  show_id: number;
+  type: SocialSite;
   url: string;
-  // social: enum;
 }
 
 export interface SocialLinkInstance
   extends Sequelize.Instance<SocialLinkAttributes> {
-  id: number;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -18,18 +18,15 @@ const SocialLink: Sequelize.Model<
   SocialLinkInstance,
   SocialLinkAttributes
 > = sequelize.define('SocialLink', {
-  show_id: Sequelize.INTEGER,
+  type: Sequelize.ENUM(
+    SocialSite.Facebook,
+    SocialSite.Instagram,
+    SocialSite.Mixcloud,
+    SocialSite.Soundcloud,
+    SocialSite.Tumblr,
+    SocialSite.Twitter
+  ),
   url: Sequelize.STRING,
-  // social: Sequelize.ENUM(
-  //   'FACEBOOK',
-  //   'INSTAGRAM',
-  //   'SOUNDCLOUD',
-  //   'MIXCLOUD',
-  //   'TWITTER',
-  //   'TUMBLR'
-  // ),
 });
-
-sequelize.sync();
 
 export default SocialLink;

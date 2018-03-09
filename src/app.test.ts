@@ -2,10 +2,10 @@ import * as request from 'supertest';
 import * as app from './app';
 
 describe('GET /', () => {
-  it('should return hello world', () => {
+  it('should redirect to /graphiql', () => {
     return request(app)
       .get('/')
-      .expect(200)
-      .expect('Content-Type', /json/);
+      .expect(302)
+      .expect('Location', '/graphiql');
   });
 });
