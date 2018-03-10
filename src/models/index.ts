@@ -14,7 +14,7 @@ const sequelize = new Sequelize(
   {
     host: process.env.DATABASE_HOST,
     dialect: 'postgres',
-    logging: false,
+    // logging: false,
     operatorsAliases: false,
   }
 );
@@ -28,7 +28,14 @@ sequelize
     console.error('Unable to connect to the database:', err);
   });
 
-export { sequelize };
-export { default as Show } from './Show';
-export { default as User } from './User';
-export { default as SocialLink } from './SocialLink';
+import Show from './Show';
+import User from './User';
+import SocialLink from './SocialLink';
+import PromoBanner from './PromoBanner';
+import PageLink from './PageLink';
+
+Show.belongsToMany(User, { through: 'UserShow', foreignKey: 'showId' });
+User.belongsToMany(Show, { through: 'UserShow', foreignKey: 'userId' });
+Show.hasMany(SocialLink, { foreignKey: 'showId' });
+
+export { sequelize, Show, User, SocialLink, PromoBanner, PageLink };
