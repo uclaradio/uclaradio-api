@@ -1,6 +1,6 @@
 # UCLA Radio API
 
-[![Travis CI](https://img.shields.io/travis/uclaradio/uclaradio-api.svg?style=flat)](https://travis-ci.org/uclaradio/uclaradio-api)
+[![Travis CI](https://img.shields.io/travis/uclaradio/uclaradio-api/master.svg?style=flat)](https://travis-ci.org/uclaradio/uclaradio-api)
 [![Codecov](https://img.shields.io/codecov/c/github/uclaradio/uclaradio-api.svg)](https://codecov.io/github/uclaradio/uclaradio-api)
 [![Dependencies](https://david-dm.org/uclaradio/uclaradio-api/status.svg?style=flat)](https://david-dm.org/uclaradio/uclaradio-api)
 [![Dev dependencies](https://david-dm.org/uclaradio/uclaradio-api/dev-status.svg?style=flat)](https://david-dm.org/uclaradio/uclaradio-api?type=dev)
