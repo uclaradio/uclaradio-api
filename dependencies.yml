@@ -7,9 +7,10 @@ collectors:
   - type: js-npm
     versions: "Y.Y.Y"
     batch_mode: true
-    related_pr_behavior: close
-    github_assignees:
-    - nathunsmitty
-    - binerys
-    # github_labels:
-    # - dependency
+    settings:
+      related_pr_behavior: close
+      github_assignees:
+      - nathunsmitty
+      - binerys
+      # github_labels:
+      # - dependency
