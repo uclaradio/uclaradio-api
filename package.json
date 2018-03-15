@@ -14,7 +14,7 @@
     "start": "node ./bin/www",
     "debug": "nodemon --inspect ./bin/www",
     "copy-graphql": "cpx \"src/schema/*.graphql\" dist/schema --verbose",
-    "test": "NODE_ENV='test' jest --forceExit",
+    "test": "NODE_ENV='test' jest",
     "precommit": "lint-staged",
     "postmerge": "yarnhook",
     "postcheckout": "yarnhook",
@@ -47,7 +47,6 @@
     },
     "testMatch": ["**/src/**/*.test.(js|ts)"],
     "testEnvironment": "node",
-    "collectCoverage": true,
     "coverageReporters": ["json"],
     "coverageDirectory": "./coverage/"
   },
