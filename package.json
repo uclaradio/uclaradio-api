@@ -14,7 +14,7 @@
     "start": "node ./bin/www",
     "debug": "nodemon --inspect ./bin/www",
     "copy-graphql": "cpx \"src/schema/*.graphql\" dist/schema --verbose",
-    "test": "NODE_ENV='test' jest --forceExit",
+    "test": "NODE_ENV='test' jest",
     "precommit": "lint-staged",
     "postmerge": "yarnhook",
     "postcheckout": "yarnhook",
@@ -41,18 +41,14 @@
     ]
   },
   "jest": {
-    "globals": {
-      "ts-jest": {
-        "tsConfigFile": "tsconfig.json"
-      }
-    },
-    "moduleFileExtensions": ["js", "ts"],
+    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
     "transform": {
       "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testMatch": ["**/src/**/*.test.(js|ts)"],
     "testEnvironment": "node",
-    "coverageReporters": ["json"]
+    "coverageReporters": ["json"],
+    "coverageDirectory": "./coverage/"
   },
   "dependencies": {
     "@types/body-parser": "^1.16.8",
