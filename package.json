@@ -21,13 +21,21 @@
     "postrewrite": "yarnhook"
   },
   "nodemonConfig": {
-    "watch": ["src"],
-    "ignore": ["src/views/", "src/schema/"],
+    "watch": [
+      "src"
+    ],
+    "ignore": [
+      "src/views/",
+      "src/schema/"
+    ],
     "ext": "ts",
     "exec": "tsc && node"
   },
   "lint-staged": {
-    "*.{js,ts,tsx,json,css,scss,md}": ["prettier --write", "git add"]
+    "*.{js,ts,tsx,json,css,scss,md}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "prettier": {
     "overrides": [
@@ -41,13 +49,24 @@
     ]
   },
   "jest": {
-    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
     "transform": {
       "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testMatch": ["**/src/**/*.test.(js|ts)"],
+    "testMatch": [
+      "**/src/**/*.test.(js|ts)"
+    ],
     "testEnvironment": "node",
-    "coverageReporters": ["json"],
+    "coverageReporters": [
+      "json"
+    ],
     "coverageDirectory": "./coverage/"
   },
   "dependencies": {
@@ -57,7 +76,7 @@
     "@types/express": "^4.11.0",
     "@types/faker": "^4.1.2",
     "@types/graphql": "^0.12.4",
-    "@types/jest": "^22.1.2",
+    "@types/jest": "^22.2.0",
     "@types/luxon": "^0.2.5",
     "@types/morgan": "^1.7.35",
     "@types/sequelize": "^4.27.4",
