@@ -88,7 +88,7 @@
     "express": "^4.16.3",
     "faker": "^4.1.0",
     "graphql": "^0.13.0",
-    "graphql-import": "^0.4.3",
+    "graphql-import": "^0.4.5",
     "graphql-tools": "^2.20.2",
     "luxon": "^0.5.2",
     "morgan": "^1.9.0",
