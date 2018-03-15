@@ -6,8 +6,8 @@ collectors:
   # pull requests for all major, minor, and patch updates
   - type: js-npm
     versions: "Y.Y.Y"
-    batch_mode: true
     settings:
+      batch_mode: true
       related_pr_behavior: close
       github_assignees:
       - nathunsmitty
