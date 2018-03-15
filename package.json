@@ -89,7 +89,7 @@
     "faker": "^4.1.0",
     "graphql": "^0.13.0",
     "graphql-import": "^0.4.5",
-    "graphql-tools": "^2.20.2",
+    "graphql-tools": "^2.23.0",
     "luxon": "^0.5.2",
     "morgan": "^1.9.0",
     "pg": "^7.4.1",
