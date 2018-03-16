@@ -1731,11 +1731,10 @@ graphql-extensions@^0.0.x:
     core-js "^2.5.3"
     source-map-support "^0.5.1"
 
-graphql-import@^0.4.3:
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/graphql-import/-/graphql-import-0.4.3.tgz#5fc68244e0908d6d8f2b91658a82be3d11f4ec62"
+graphql-import@^0.4.5:
+  version "0.4.5"
+  resolved "https://registry.yarnpkg.com/graphql-import/-/graphql-import-0.4.5.tgz#e2f18c28d335733f46df8e0733d8deb1c6e2a645"
   dependencies:
-    graphql "^0.13.0"
     lodash "^4.17.4"
 
 graphql-tools@^2.20.2:
