@@ -95,7 +95,7 @@
     "pg": "^7.4.1",
     "sequelize": "^4.37.5",
     "supertest": "^3.0.0",
-    "typescript": "^2.7.1"
+    "typescript": "^2.8.1"
   },
   "devDependencies": {
     "faker": "^4.1.0",
