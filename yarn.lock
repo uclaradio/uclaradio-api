@@ -4128,9 +4128,9 @@ send@0.16.2:
     range-parser "~1.2.0"
     statuses "~1.4.0"
 
-sequelize@^4.37.0:
-  version "4.37.0"
-  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-4.37.0.tgz#8e6d6678b5f86213c082f48464e134f0f51b7491"
+sequelize@^4.37.5:
+  version "4.37.5"
+  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-4.37.5.tgz#08a464a4f0f2563a41f77a1fc1067344f3144b52"
   dependencies:
     bluebird "^3.5.0"
     cls-bluebird "^2.1.0"
