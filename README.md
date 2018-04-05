@@ -124,7 +124,7 @@ You'll also want to create a dummy database used for testing. It's called
 createdb uclaradio-test
 ```
 
-Note that by default, the Postgres user is your computer's username and there is
+Note that by default, the Postgres user is your computer's username (e.g., `nathan`) and there is
 no password. When creating your `.env` file, the values will look something
 like:
 
