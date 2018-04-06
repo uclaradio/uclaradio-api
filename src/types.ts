@@ -1,0 +1,45 @@
+export enum Day {
+  Monday = 'Monday',
+  Tuesday = 'Tuesday',
+  Wednesday = 'Wednesday',
+  Thursday = 'Thursday',
+  Friday = 'Friday',
+  Saturday = 'Saturday',
+  Sunday = 'Sunday',
+}
+
+export enum Hour {
+  TwelveAM,
+  OneAM,
+  TwoAM,
+  ThreeAM,
+  FourAM,
+  FiveAM,
+  SixAM,
+  SevenAM,
+  EightAM,
+  NineAM,
+  TenAM,
+  ElevenAM,
+  TwelvePM,
+  OnePM,
+  TwoPM,
+  ThreePM,
+  FourPM,
+  FivePM,
+  SixPM,
+  SevenPM,
+  EightPM,
+  NinePM,
+  TenPM,
+  ElevenPM,
+}
+
+export enum SocialSite {
+  Facebook = 'Facebook',
+  Instagram = 'Instagram',
+  Soundcloud = 'Soundcloud',
+  Mixcloud = 'Mixcloud',
+  Twitter = 'Twitter',
+  Tumblr = 'Tumblr',
+}

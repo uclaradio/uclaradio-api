@@ -1,6 +1,6 @@
 # UCLA Radio API
 
-[![Travis CI](https://img.shields.io/travis/uclaradio/uclaradio-api.svg?style=flat)](https://travis-ci.org/uclaradio/uclaradio-api)
+[![Travis CI](https://img.shields.io/travis/uclaradio/uclaradio-api/master.svg?style=flat)](https://travis-ci.org/uclaradio/uclaradio-api)
 [![Codecov](https://img.shields.io/codecov/c/github/uclaradio/uclaradio-api.svg)](https://codecov.io/github/uclaradio/uclaradio-api)
 [![Dependencies](https://david-dm.org/uclaradio/uclaradio-api/status.svg?style=flat)](https://david-dm.org/uclaradio/uclaradio-api)
 [![Dev dependencies](https://david-dm.org/uclaradio/uclaradio-api/dev-status.svg?style=flat)](https://david-dm.org/uclaradio/uclaradio-api?type=dev)
@@ -124,7 +124,7 @@ You'll also want to create a dummy database used for testing. It's called
 createdb uclaradio-test
 ```
 
-Note that by default, the Postgres user is your computer's username and there is
+Note that by default, the Postgres user is your computer's username (e.g., `nathan`) and there is
 no password. When creating your `.env` file, the values will look something
 like:
 
@@ -143,6 +143,14 @@ For development, you may also find it useful to use a GUI client to visualize
 the database. There
 [a lot of great options](https://wiki.postgresql.org/wiki/Community_Guide_to_PostgreSQL_GUI_Tools),
 but we recommend [PSequel](http://www.psequel.com)!
+
+Run the following command to populate the `uclaradio` database with our tables and test data:
+
+```
+yarn setup
+```
+
+If the script hangs, press `CTRL+C` and run the above command again.
 
 ##### Windows
 
