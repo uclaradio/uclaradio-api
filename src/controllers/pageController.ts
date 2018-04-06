@@ -4,10 +4,12 @@ import { PageLinkAttributes, PageLinkInstance } from '../models/PageLink';
 /**
  * Creates a page with the given attribues
  *
- * @param attributes
+ * @param {PageLinkAttributes} attributes
  * @returns The newly created page.
  */
-export function createPage(attributes: PageLinkAttributes) : Promise<PageLinkInstance> {
+export function createPage(
+  attributes: PageLinkAttributes
+): Promise<PageLinkInstance> {
   const newPageLink: PageLinkInstance = await PageLink.create(attribues);
   return newPageLink;
 }
@@ -15,7 +17,8 @@ export function createPage(attributes: PageLinkAttributes) : Promise<PageLinkIns
 /**
  * Gets the page with the given id.
  *
- * @param id
+ * @param {number} id
+ * @returns the page corresponding to id
  */
 export function getPage(id: number): Promise<PageLinkInstance | null> {
   const pageLink: PageLinkInstance | null = await PageLink.findById(id);
@@ -25,11 +28,10 @@ export function getPage(id: number): Promise<PageLinkInstance | null> {
 /**
  * Gets all pages.
  *
- * @param id
  */
 export function getAllPages(): Promise<PageLinkInstance[]> {
-  const pageLink: PageLinkInstance[] = await PageLink.all();
-  return pageLink;
+  const pageLinks: PageLinkInstance[] = await PageLink.all();
+  return pageLinks;
 }
 
 /**
@@ -37,10 +39,13 @@ export function getAllPages(): Promise<PageLinkInstance[]> {
  *
  * @export
  * @param {number} id
- * @param {*} attributes
- * @returns {(any | undefined)}
+ * @param {PageLinkAttributes} attributes
+ * @returns {(PageLinkInstance | null)}
  */
-export function updatePage(id: number, attributes: PageLinkAttributes): Promise<PageLinkInstance | null> {
+export function updatePage(
+  id: number,
+  attributes: PageLinkAttributes
+): Promise<PageLinkInstance | null> {
   const [numberOfUpdatedPageLinks, updatedPageLinks] = await PageLink.update(
     attributes,
     {
@@ -62,7 +67,7 @@ export function updatePage(id: number, attributes: PageLinkAttributes): Promise<
 /**
  * Deletes a page. Returns true if the page was successfully deleted, false otherwise.
  *
- * @param id
+ * @param {numebr} id
  */
 export function deletePage(id: number): Promise<boolean> {
   const numberOfDeletedPageLinks = await PageLink.destroy({
