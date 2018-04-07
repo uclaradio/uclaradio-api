@@ -98,14 +98,14 @@
     "typescript": "^2.7.1"
   },
   "devDependencies": {
-    "faker": "^4.1.0",
-    "husky": "^0.14.3",
-    "jest": "^22.2.2",
-    "lint-staged": "^7.0.0",
-    "nodemon": "^1.17.2",
-    "prettier": "^1.11.1",
-    "ts-jest": "^22.4.1",
-    "ts-node": "^5.0.1",
-    "yarnhook": "^0.1.1"
+    "faker": "4.1.0",
+    "husky": "0.14.3",
+    "jest": "22.4.2",
+    "lint-staged": "7.0.0",
+    "nodemon": "1.17.2",
+    "prettier": "1.11.1",
+    "ts-jest": "22.4.1",
+    "ts-node": "5.0.1",
+    "yarnhook": "0.1.1"
   }
 }
