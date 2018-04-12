@@ -9,12 +9,13 @@
     "node": "9.x"
   },
   "scripts": {
+    "setup": "ts-node ./scripts/create-data.ts",
     "prestart": "tsc && yarn copy-graphql",
     "setup-shows": "ts-node ./scripts/create-shows.ts",
     "start": "node ./bin/www",
     "debug": "nodemon --inspect ./bin/www",
     "copy-graphql": "cpx \"src/schema/*.graphql\" dist/schema --verbose",
-    "test": "jest",
+    "test": "NODE_ENV='test' jest --forceExit",
     "precommit": "lint-staged",
     "postmerge": "yarnhook",
     "postcheckout": "yarnhook",
