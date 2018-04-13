@@ -1,0 +1,7 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "assignees": ["nathunsmitty", "binerys"],
+  "labels": ["dependencies"]
+}
