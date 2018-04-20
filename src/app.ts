@@ -1,8 +1,10 @@
+import * as path from 'path';
 import * as express from 'express';
 import { Request, Response, NextFunction } from 'express';
 import * as logger from 'morgan';
 import * as cookieParser from 'cookie-parser';
 import * as bodyParser from 'body-parser';
+import * as favicon from 'serve-favicon';
 import { graphqlExpress, graphiqlExpress } from 'apollo-server-express';
 import * as dotenv from 'dotenv';
 
@@ -20,6 +22,9 @@ app.use(logger('dev'));
 /** Parse incoming request bodies */
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+/** Favicon */
+app.use(favicon(path.join(__dirname, 'static', 'favicon.ico')));
 
 /** Routing */
 app.get('/', (req: Request, res: Response) => {
