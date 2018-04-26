@@ -10,7 +10,6 @@ export interface ShowAttributes {
   description?: string;
   genre?: string;
   imageURL?: string;
-
   day: Day;
   startTime: Hour;
   duration: number;

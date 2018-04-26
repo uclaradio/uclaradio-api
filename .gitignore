@@ -62,7 +62,9 @@ typings/
 .env
 
 
-
 # End of https://www.gitignore.io/api/node
 /dist
 /.travis/deploy.key
+
+# package lock
+package-lock.json

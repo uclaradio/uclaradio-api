@@ -14,7 +14,7 @@ const sequelize = new Sequelize(
   {
     host: process.env.DATABASE_HOST,
     dialect: 'postgres',
-    // logging: false,
+    logging: process.env.NODE_ENV === 'test' ? false : true,
     operatorsAliases: false,
   }
 );
