@@ -3,11 +3,19 @@ import { sequelize, Show } from '../models';
 import * as showController from './showController';
 import { ENETDOWN } from 'constants';
 import { Day, Hour } from '../types';
+import { ShowAttributes } from '../models/Show';
 
 beforeEach(async () => {
   await sequelize.sync({ force: true });
 });
 
+/**
+ * Test: create a random show using faker.js
+ * @author Tanzeela Khan
+ * @async
+ * @param
+ * @returns {(ShowAttributes)} The randomly created show.
+ */
 function getRandomShow() {
   return {
     title: faker.commerce.productAdjective(),
@@ -20,6 +28,13 @@ function getRandomShow() {
   };
 }
 
+/**
+ * Test: add a new show to the database.
+ * @author Tanzeela Khan
+ * @async
+ * @param
+ * @returns {(Show)} The added show.
+ */
 describe('createShow', () => {
   it('should add a show entry to the database', async () => {
     const show = getRandomShow();
@@ -45,6 +60,13 @@ describe('createShow', () => {
   });
 });
 
+/**
+ * Test: retrieves a show from the database with the given id.
+ * @author Tanzeela Khan
+ * @async
+ * @param
+ * @returns {(Show | null)} The added show or undefined if show with specified ID is not found.
+ */
 describe('getShow', () => {
   it('retrieves a show from the database', async () => {
     const show = getRandomShow();
@@ -67,6 +89,13 @@ describe('getShow', () => {
   });
 });
 
+/**
+ * Test: retrieves list of all shows in the database.
+ * @author Tanzeela Khan
+ * @async
+ * @param
+ * @returns {ShowInstance[]} The list of all shows in the database.
+ */
 describe('getAllShows', () => {
   it('returns an empty array when the database is empty', async () => {
     expect(await showController.getAllShows()).toHaveLength(0);
@@ -84,6 +113,13 @@ describe('getAllShows', () => {
   });
 });
 
+/**
+ * Test: update a show in the database with the given attributes.
+ * @author Tanzeela Khan
+ * @async
+ * @param
+ * @returns {(ShowInstance | undefined)} The updated show, or undefined if the show is not updated.
+ */
 describe('updateShow', () => {
   it('updates an existing show from the database', async () => {
     await Show.create(getRandomShow());
@@ -108,6 +144,13 @@ describe('updateShow', () => {
   });
 });
 
+/**
+ * Test: delete a show. Returns true if the show was successfully deleted, false otherwise.
+ * @author Tanzeela Khan
+ * @async
+ * @param {numberx} id
+ * @returns {Promise<boolean>} True if the show was deleted and false if the show to be deleted was invalid.
+ */
 describe('deleteShow', () => {
   it('deletes a show from the database and returns true', async () => {
     await Show.create(getRandomShow());

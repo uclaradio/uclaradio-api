@@ -4,10 +4,10 @@ import { ShowAttributes, ShowInstance } from '../models/Show';
 /**
  * Creates a show with the given attribues
  * @author Tanzeela Khan
+ * @async
  * @param {ShowAttributes} attributes
  * @returns {ShowInstance} The newly created show.
  */
-
 export async function createShow(
   attributes: ShowAttributes
 ): Promise<ShowInstance> {
@@ -17,6 +17,7 @@ export async function createShow(
 /**
  * Gets the show with the given id.
  * @author Tanzeela Khan
+ * @async
  * @param {numberx} id
  * @returns {ShowInstance} The show with the matching id.
  */
@@ -28,6 +29,7 @@ export async function getShow(id: number): Promise<ShowInstance | null> {
 /**
  * Gets all shows.
  * @author Tanzeela Khan
+ * @async
  * @param {numberx} id
  * @returns {ShowInstance[]} All the shows.
  */
@@ -38,11 +40,11 @@ export async function getAllShows(): Promise<ShowInstance[]> {
 
 /**
  * Updates a show with the given attributes.
- *
  * @export
  * @author Tanzeela Khan
- * @param {number} id
- * @param {*} attributes
+ * @async
+ * @param {numberx} id
+ * @param {ShowAttributes} attributes
  * @returns {(ShowInstance | undefined)} The updated show, or undefined if the show is not updated.
  */
 export async function updateShow(
@@ -67,8 +69,9 @@ export async function updateShow(
 /**
  * Deletes a show. Returns true if the show was successfully deleted, false otherwise.
  * @author Tanzeela Khan
- * @param id
- * @returns {Promise<boolean>}
+ * @async
+ * @param {numberx} id
+ * @returns {Promise<boolean>} True if the show was deleted and false if the show to be deleted was invalid.
  */
 export async function deleteShow(id: number): Promise<boolean> {
   const numberOfDeletedShows = await Show.destroy({
