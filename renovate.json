@@ -1,7 +1,5 @@
 {
-  "extends": [
-    "config:base"
-  ],
-  "assignees": ["nathunsmitty", "binerys"],
-  "labels": ["dependencies"]
+  "extends": ["config:base"],
+  "labels": ["dependencies"],
+  "automerge": true
 }
