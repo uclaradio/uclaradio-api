@@ -1,28 +1,12 @@
 import * as faker from 'faker';
-
 import { sequelize, Show } from '../models';
 import * as showController from './showController';
 import { ENETDOWN } from 'constants';
-
-enum Day {
-  Monday,
-  Tuesday,
-  Wednesday,
-  Thursday,
-  Friday,
-  Saturday,
-  Sunday,
-}
+import { Day, Hour } from '../types';
 
 beforeEach(async () => {
   await sequelize.sync({ force: true });
 });
-
-function randomDayEnum() {
-  const randNum = Math.floor(Math.random() * 7);
-  const typedDayString: keyof typeof Day = 'Sunday';
-  return typedDayString;
-}
 
 function getRandomShow() {
   return {
@@ -30,7 +14,7 @@ function getRandomShow() {
     description: faker.hacker.phrase(),
     genre: faker.commerce.productAdjective(),
     imageURL: faker.image.avatar(),
-    day: Day[randomDayEnum()],
+    day: Day.Sunday,
     startTime: Math.floor(Math.random() * 24),
     duration: Math.floor(Math.random() * 60),
   };
@@ -63,15 +47,7 @@ describe('createShow', () => {
 
 describe('getShow', () => {
   it('retrieves a show from the database', async () => {
-    const show = {
-      title: faker.commerce.productName(),
-      description: faker.hacker.phrase(),
-      genre: faker.commerce.productAdjective(),
-      imageURL: faker.image.avatar(),
-      day: Day[randomDayEnum()],
-      startTime: Math.floor(Math.random() * 24),
-      duration: Math.floor(Math.random() * 60),
-    };
+    const show = getRandomShow();
     await Show.create(show);
 
     const retrievedShowInstance = await showController.getShow(1);
@@ -114,13 +90,7 @@ describe('updateShow', () => {
 
     const newName = faker.commerce.productName();
     const updatedShowInstance = await showController.updateShow(1, {
-      title: faker.commerce.productName(),
-      description: faker.hacker.phrase(),
-      genre: faker.commerce.productAdjective(),
-      imageURL: faker.image.avatar(),
-      day: Day[randomDayEnum()],
-      startTime: Math.floor(Math.random() * 24),
-      duration: Math.floor(Math.random() * 60),
+      title: newName,
     });
     const updatedShowAttributes = updatedShowInstance.get({
       plain: true,
@@ -132,12 +102,6 @@ describe('updateShow', () => {
   it('returns null if a show with the specified ID cannot be found', async () => {
     const updatedShowInstance = await showController.updateShow(2, {
       title: faker.commerce.productName(),
-      description: faker.hacker.phrase(),
-      genre: faker.commerce.productAdjective(),
-      imageURL: faker.image.avatar(),
-      day: Day[randomDayEnum()],
-      startTime: Math.floor(Math.random() * 24),
-      duration: Math.floor(Math.random() * 60),
     });
 
     expect(updatedShowInstance).toBeNull();
