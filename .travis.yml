@@ -1,6 +1,9 @@
 language: node_js
 node_js:
 - node
+- lts/*
+allow_failures:
+- node_js: node
 notifications:
   email: false
 cache:
