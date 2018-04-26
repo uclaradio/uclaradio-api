@@ -6,7 +6,7 @@
   "author": "UCLA Radio Web <radio.web@uclaradio.com>",
   "license": "GPL-3.0",
   "engines": {
-    "node": "9.x"
+    "node": "9.x || 10.x"
   },
   "scripts": {
     "setup": "ts-node ./scripts/create-data.ts",
@@ -22,21 +22,13 @@
     "postrewrite": "yarnhook"
   },
   "nodemonConfig": {
-    "watch": [
-      "src"
-    ],
-    "ignore": [
-      "src/views/",
-      "src/schema/"
-    ],
+    "watch": ["src"],
+    "ignore": ["src/views/", "src/schema/"],
     "ext": "ts",
     "exec": "tsc && node"
   },
   "lint-staged": {
-    "*.{js,ts,tsx,json,css,scss,md}": [
-      "prettier --write",
-      "git add"
-    ]
+    "*.{js,ts,tsx,json,css,scss,md}": ["prettier --write", "git add"]
   },
   "prettier": {
     "overrides": [
@@ -50,24 +42,13 @@
     ]
   },
   "jest": {
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ],
+    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
     "transform": {
       "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testMatch": [
-      "**/src/**/*.test.(js|ts)"
-    ],
+    "testMatch": ["**/src/**/*.test.(js|ts)"],
     "testEnvironment": "node",
-    "coverageReporters": [
-      "json"
-    ],
+    "coverageReporters": ["json"],
     "coverageDirectory": "./coverage/"
   },
   "dependencies": {
