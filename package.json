@@ -22,13 +22,21 @@
     "postrewrite": "yarnhook"
   },
   "nodemonConfig": {
-    "watch": ["src"],
-    "ignore": ["src/views/", "src/schema/"],
+    "watch": [
+      "src"
+    ],
+    "ignore": [
+      "src/views/",
+      "src/schema/"
+    ],
     "ext": "ts",
     "exec": "tsc && node"
   },
   "lint-staged": {
-    "*.{js,ts,tsx,json,css,scss,md}": ["prettier --write", "git add"]
+    "*.{js,ts,tsx,json,css,scss,md}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "prettier": {
     "overrides": [
@@ -42,13 +50,24 @@
     ]
   },
   "jest": {
-    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
     "transform": {
       "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testMatch": ["**/src/**/*.test.(js|ts)"],
+    "testMatch": [
+      "**/src/**/*.test.(js|ts)"
+    ],
     "testEnvironment": "node",
-    "coverageReporters": ["json"],
+    "coverageReporters": [
+      "json"
+    ],
     "coverageDirectory": "./coverage/"
   },
   "dependencies": {
@@ -59,7 +78,6 @@
     "@types/faker": "^4.1.2",
     "@types/graphql": "^0.13.0",
     "@types/jest": "^22.2.0",
-    "@types/luxon": "^0.5.0",
     "@types/morgan": "^1.7.35",
     "@types/sequelize": "^4.27.10",
     "@types/serve-favicon": "^2.2.30",
@@ -73,7 +91,6 @@
     "graphql": "^0.13.0",
     "graphql-import": "^0.5.0",
     "graphql-tools": "^2.23.0",
-    "luxon": "^0.5.8",
     "morgan": "^1.9.0",
     "pg": "^7.4.1",
     "sequelize": "^4.37.0",
@@ -82,7 +99,6 @@
     "typescript": "^2.7.1"
   },
   "devDependencies": {
-    "faker": "4.1.0",
     "husky": "0.14.3",
     "jest": "22.4.3",
     "lint-staged": "7.0.4",
