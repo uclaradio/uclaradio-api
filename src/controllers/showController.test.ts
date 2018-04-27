@@ -1,41 +1,40 @@
 import * as faker from 'faker';
-
 import { sequelize, Show } from '../models';
 import * as showController from './showController';
 import { ENETDOWN } from 'constants';
-
-enum Day {
-  Monday,
-  Tuesday,
-  Wednesday,
-  Thursday,
-  Friday,
-  Saturday,
-  Sunday,
-}
+import { Day, Hour } from '../types';
+import { ShowAttributes } from '../models/Show';
 
 beforeEach(async () => {
   await sequelize.sync({ force: true });
 });
 
-function randomDayEnum() {
-  const randNum = Math.floor(Math.random() * 7);
-  const typedDayString: keyof typeof Day = 'Sunday';
-  return typedDayString;
-}
-
+/**
+ * Test: create a random show using faker.js
+ * @author Tanzeela Khan
+ * @async
+ * @param
+ * @returns {(ShowAttributes)} The randomly created show.
+ */
 function getRandomShow() {
   return {
     title: faker.commerce.productAdjective(),
     description: faker.hacker.phrase(),
     genre: faker.commerce.productAdjective(),
     imageURL: faker.image.avatar(),
-    day: Day[randomDayEnum()],
+    day: Day.Sunday,
     startTime: Math.floor(Math.random() * 24),
     duration: Math.floor(Math.random() * 60),
   };
 }
 
+/**
+ * Test: add a new show to the database.
+ * @author Tanzeela Khan
+ * @async
+ * @param
+ * @returns {(Show)} The added show.
+ */
 describe('createShow', () => {
   it('should add a show entry to the database', async () => {
     const show = getRandomShow();
@@ -61,17 +60,16 @@ describe('createShow', () => {
   });
 });
 
+/**
+ * Test: retrieves a show from the database with the given id.
+ * @author Tanzeela Khan
+ * @async
+ * @param
+ * @returns {(Show | null)} The added show or undefined if show with specified ID is not found.
+ */
 describe('getShow', () => {
   it('retrieves a show from the database', async () => {
-    const show = {
-      title: faker.commerce.productName(),
-      description: faker.hacker.phrase(),
-      genre: faker.commerce.productAdjective(),
-      imageURL: faker.image.avatar(),
-      day: Day[randomDayEnum()],
-      startTime: Math.floor(Math.random() * 24),
-      duration: Math.floor(Math.random() * 60),
-    };
+    const show = getRandomShow();
     await Show.create(show);
 
     const retrievedShowInstance = await showController.getShow(1);
@@ -91,6 +89,13 @@ describe('getShow', () => {
   });
 });
 
+/**
+ * Test: retrieves list of all shows in the database.
+ * @author Tanzeela Khan
+ * @async
+ * @param
+ * @returns {ShowInstance[]} The list of all shows in the database.
+ */
 describe('getAllShows', () => {
   it('returns an empty array when the database is empty', async () => {
     expect(await showController.getAllShows()).toHaveLength(0);
@@ -108,19 +113,20 @@ describe('getAllShows', () => {
   });
 });
 
+/**
+ * Test: update a show in the database with the given attributes.
+ * @author Tanzeela Khan
+ * @async
+ * @param
+ * @returns {(ShowInstance | undefined)} The updated show, or undefined if the show is not updated.
+ */
 describe('updateShow', () => {
   it('updates an existing show from the database', async () => {
     await Show.create(getRandomShow());
 
     const newName = faker.commerce.productName();
     const updatedShowInstance = await showController.updateShow(1, {
-      title: faker.commerce.productName(),
-      description: faker.hacker.phrase(),
-      genre: faker.commerce.productAdjective(),
-      imageURL: faker.image.avatar(),
-      day: Day[randomDayEnum()],
-      startTime: Math.floor(Math.random() * 24),
-      duration: Math.floor(Math.random() * 60),
+      title: newName,
     });
     const updatedShowAttributes = updatedShowInstance.get({
       plain: true,
@@ -132,18 +138,19 @@ describe('updateShow', () => {
   it('returns null if a show with the specified ID cannot be found', async () => {
     const updatedShowInstance = await showController.updateShow(2, {
       title: faker.commerce.productName(),
-      description: faker.hacker.phrase(),
-      genre: faker.commerce.productAdjective(),
-      imageURL: faker.image.avatar(),
-      day: Day[randomDayEnum()],
-      startTime: Math.floor(Math.random() * 24),
-      duration: Math.floor(Math.random() * 60),
     });
 
     expect(updatedShowInstance).toBeNull();
   });
 });
 
+/**
+ * Test: delete a show. Returns true if the show was successfully deleted, false otherwise.
+ * @author Tanzeela Khan
+ * @async
+ * @param {numberx} id
+ * @returns {Promise<boolean>} True if the show was deleted and false if the show to be deleted was invalid.
+ */
 describe('deleteShow', () => {
   it('deletes a show from the database and returns true', async () => {
     await Show.create(getRandomShow());
