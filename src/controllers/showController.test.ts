@@ -1,7 +1,6 @@
 import * as faker from 'faker';
 import { sequelize, Show } from '../models';
 import * as showController from './showController';
-import { ENETDOWN } from 'constants';
 import { Day, Hour } from '../types';
 import { ShowAttributes } from '../models/Show';
 
