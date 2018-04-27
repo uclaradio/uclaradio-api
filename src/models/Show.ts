@@ -6,14 +6,13 @@ import { SocialLinkInstance } from './SocialLink';
 import { UserInstance } from './User';
 
 export interface ShowAttributes {
-  title: string;
+  title?: string;
   description?: string;
   genre?: string;
   imageURL?: string;
-
-  day: Day;
-  startTime: Hour;
-  duration: number;
+  day?: Day;
+  startTime?: Hour;
+  duration?: number;
 }
 
 export interface ShowInstance extends Sequelize.Instance<ShowAttributes> {
