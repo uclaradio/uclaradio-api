@@ -82,11 +82,11 @@
   "devDependencies": {
     "husky": "0.14.3",
     "jest": "22.4.3",
-    "lint-staged": "7.0.5",
+    "lint-staged": "7.1.0",
     "nodemon": "1.17.4",
     "prettier": "1.12.1",
     "ts-jest": "22.4.4",
-    "ts-node": "6.0.2",
+    "ts-node": "6.0.3",
     "yarnhook": "0.2.0"
   }
 }
