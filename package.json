@@ -70,7 +70,7 @@
     "express": "^4.16.3",
     "faker": "^4.1.0",
     "graphql": "^0.13.2",
-    "graphql-import": "^0.5.2",
+    "graphql-import": "^0.7.0",
     "graphql-tools": "^3.0.0",
     "morgan": "^1.9.0",
     "pg": "^7.4.1",
