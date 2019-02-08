@@ -10,6 +10,7 @@
     "dev": "nodemon",
     "debug": "nodemon --inspect ./bin/www",
     "build": "tsc",
+    "create-shows": "ts-node ./scripts/create-shows.ts",
     "precommit": "lint-staged",
     "postmerge": "yarnhook",
     "postcheckout": "yarnhook",
@@ -36,6 +37,7 @@
     ]
   },
   "dependencies": {
+    "@types/faker": "^4.1.5",
     "body-parser": "^1.18.2",
     "cookie-parser": "^1.4.3",
     "dotenv": "^4.0.0",

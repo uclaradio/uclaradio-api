@@ -111,17 +111,23 @@ psql postgres
 For reference, you can stop postgres at any time with
 `brew services stop postgresql`. You don't want to do that right now, though!
 
-Instead, you'll want to create UCLA Radio's database. We call ours `uclaradio`.
+Instead, you'll want to create UCLA Radio's database while while in psql. We call ours `uclaradio`.
 
 ```shell
-createdb uclaradio
+create database uclaradio;
 ```
 
 You'll also want to create a dummy database used for testing. It's called
 `uclaradio-test`.
 
 ```shell
-createdb uclaradio-test
+create database uclaradio-test;
+```
+
+List all your databases to make sure uclaradio is created.
+
+```shell
+\l
 ```
 
 Note that by default, the Postgres user is your computer's username and there is
@@ -143,6 +149,18 @@ For development, you may also find it useful to use a GUI client to visualize
 the database. There
 [a lot of great options](https://wiki.postgresql.org/wiki/Community_Guide_to_PostgreSQL_GUI_Tools),
 but we recommend [PSequel](http://www.psequel.com)!
+
+Install all packages.
+
+```shell
+yarn
+```
+
+Fill the psql database with mock shows.
+
+```shell
+yarn create-shows
+```
 
 ##### Windows
 
