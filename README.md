@@ -116,14 +116,14 @@ For reference, you can stop postgres at any time with
 Instead, you'll want to create UCLA Radio's database while while in psql. We call ours `uclaradio`.
 
 ```shell
-create database uclaradio;
+create database "uclaradio";
 ```
 
 You'll also want to create a dummy database used for testing. It's called
 `uclaradio-test`.
 
 ```shell
-create database uclaradio-test;
+create database "uclaradio-test";
 ```
 
 List all your databases to make sure uclaradio is created.
