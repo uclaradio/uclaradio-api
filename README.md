@@ -108,6 +108,8 @@ Verify Postgres is working by accessing `psql`, an admin utility that is install
 psql postgres
 ```
 
+If you're experiencing issues with this, make sure that your ```/etc/hosts``` file is configured correctly.
+
 For reference, you can stop postgres at any time with
 `brew services stop postgresql`. You don't want to do that right now, though!
 
@@ -150,6 +152,8 @@ the database. There
 [a lot of great options](https://wiki.postgresql.org/wiki/Community_Guide_to_PostgreSQL_GUI_Tools),
 but we recommend [PSequel](http://www.psequel.com)!
 
+You can now exit out of the postgreSQL shell.
+
 Install all packages.
 
 ```shell
@@ -160,6 +164,19 @@ Fill the psql database with mock shows.
 
 ```shell
 yarn create-shows
+```
+
+To check if the mock shows were created, start the postgreSQL shell.
+
+```shell
+psql postgres
+```
+
+Within the shell, type the following commands to navigate to the uclaradio table and to query the table.
+
+```shell
+\c uclaradio
+SELECT * from "Shows";
 ```
 
 ##### Windows
