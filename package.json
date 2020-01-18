@@ -85,7 +85,7 @@
     "lint-staged": "7.1.0",
     "nodemon": "1.17.4",
     "prettier": "1.12.1",
-    "ts-jest": "22.4.6",
+    "ts-jest": "24.3.0",
     "ts-node": "6.0.3",
     "yarnhook": "0.2.0"
   }
