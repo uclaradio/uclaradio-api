@@ -76,7 +76,7 @@
     "pg": "^8.0.0",
     "sequelize": "^4.37.6",
     "serve-favicon": "^2.5.0",
-    "supertest": "^3.0.0",
+    "supertest": "^4.0.0",
     "typescript": "^2.8.3"
   },
   "devDependencies": {
