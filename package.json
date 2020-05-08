@@ -77,7 +77,7 @@
     "sequelize": "^4.37.6",
     "serve-favicon": "^2.5.0",
     "supertest": "^4.0.0",
-    "typescript": "^2.8.3"
+    "typescript": "^3.0.0"
   },
   "devDependencies": {
     "husky": "4.2.5",
