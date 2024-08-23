@@ -58,7 +58,7 @@
     "@types/express": "^4.11.0",
     "@types/faker": "^4.1.2",
     "@types/graphql": "^14.0.0",
-    "@types/jest": "^26.0.0",
+    "@types/jest": "^29.0.0",
     "@types/morgan": "^1.7.35",
     "@types/sequelize": "^4.27.16",
     "@types/serve-favicon": "^2.2.30",
@@ -81,11 +81,11 @@
   },
   "devDependencies": {
     "husky": "4.2.5",
-    "jest": "26.4.2",
+    "jest": "29.7.0",
     "lint-staged": "10.2.13",
     "nodemon": "2.0.4",
     "prettier": "2.1.0",
-    "ts-jest": "26.2.0",
+    "ts-jest": "29.2.5",
     "ts-node": "9.0.0",
     "yarnhook": "0.4.3"
   }
