@@ -87,6 +87,6 @@
     "prettier": "2.1.0",
     "ts-jest": "26.2.0",
     "ts-node": "9.0.0",
-    "yarnhook": "0.4.3"
+    "yarnhook": "0.6.2"
   }
 }
